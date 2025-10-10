@@ -395,7 +395,7 @@ section p {
   height: auto;
   object-fit: contain;
   object-position: center;
-  opacity: 0.16;
+  opacity: 0.4;
   filter: grayscale(8%) contrast(108%);
   pointer-events: none;
   user-select: none;
@@ -883,4 +883,15 @@ section:not(.hero) {
 .hero--under-header {
   height: calc(100dvh - var(--header-h, 0px));
   min-height: calc(100dvh - var(--header-h, 0px));
+}
+
+.features .feature-card__content .btn.btn--outline {
+  justify-self: center;
+  margin-inline: auto;
+}
+
+/* (opțional) dacă vei avea și alte tipuri de butoane acolo */
+.features .feature-card__content .btn {
+  justify-self: center;
+  margin-inline: auto;
 }
