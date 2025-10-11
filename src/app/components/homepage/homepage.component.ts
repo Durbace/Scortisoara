@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit, OnDestroy {
+   constructor(private router: Router) {}
+   
   private hoverTimers = new WeakMap<HTMLElement, number>();
 
   openHover(evt: Event) {
@@ -124,5 +126,13 @@ export class HomepageComponent implements OnInit, OnDestroy {
     window.removeEventListener('touchmove', this.onTouchMove);
     window.removeEventListener('touchend', this.onTouchEnd);
     window.removeEventListener('keydown', this.onKey);
+  }
+
+   goToTypes() {
+    this.router.navigate(['/tipuri']);
+  }
+
+  goToType(slug: string) {
+    this.router.navigate(['/tipuri'], { fragment: slug });
   }
 }

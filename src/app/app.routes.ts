@@ -6,12 +6,16 @@ export const routes: Routes = [
   {
     path: 'retete',
     loadComponent: () =>
-      import('./components/retete/retete.component').then(m => m.ReteteComponent),
+      import('./components/retete/retete.component').then(
+        (m) => m.ReteteComponent
+      ),
   },
-  // (opțional - pentru butonul din cardul 2)
-  // {
-  //   path: 'tipuri',
-  //   loadComponent: () =>
-  //     import('./components/tipuri/tipuri.component').then(m => m.TipuriComponent),
-  // },
+
+  {
+    path: 'tipuri',
+    loadComponent: () =>
+      import('./components/tipuri/tipuri.component').then(
+        (m) => m.TipuriComponent
+      ),
+  },
 ];

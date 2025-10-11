@@ -6,8 +6,9 @@
   <img src="assets/images/logo.png" alt="Logo Scorțișoară" class="hero__logo" />
 
   <nav class="hero__menu hero__menu--left">
-    <a href="#">ACASĂ</a>
+    <a routerLink="/">ACASĂ</a>
     <a routerLink="/retete">REȚETE</a>
+
     <div
       class="dropdown"
       (mouseenter)="openHover($event)"
@@ -15,13 +16,14 @@
       (focusin)="openHover($event)"
       (focusout)="closeHover($event)"
     >
-      <button class="trigger">ORIGINI</button>
+      <button class="trigger" (click)="goToTypes()">ORIGINI</button>
+
       <ul class="submenu">
-        <li><a href="#">Ceylon (Sri Lanka)</a></li>
-        <li><a href="#">Cassia (China)</a></li>
-        <li><a href="#">Saigon (Vietnam)</a></li>
-        <li><a href="#">Korintje (Indonezia)</a></li>
-        <li><a href="#">Madagascar</a></li>
+        <li><a (click)="goToType('ceylon')">Ceylon (Sri Lanka)</a></li>
+        <li><a (click)="goToType('cassia-china')">Cassia (China)</a></li>
+        <li><a (click)="goToType('saigon')">Saigon (Vietnam)</a></li>
+        <li><a (click)="goToType('korintje')">Korintje (Indonezia)</a></li>
+        <li><a (click)="goToType('madagascar')">Madagascar</a></li>
       </ul>
     </div>
   </nav>
@@ -130,7 +132,7 @@
         intensitate, culoare și cele mai bune utilizări. Descoperă de unde
         provin și cum să alegi varianta potrivită pentru rețetele tale.
       </p>
-      <a class="btn btn--outline" href="#"
+      <a class="btn btn--outline" routerLink="/tipuri"
         >DESCOPERĂ TIPURILE <span aria-hidden="true">→</span></a
       >
     </div>
