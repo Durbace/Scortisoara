@@ -1,0 +1,28 @@
+<button class="back-btn" type="button" (click)="onBack()" aria-label="Înapoi la acasă">
+  <svg class="back-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
+  </svg>
+  <span class="back-btn__label">Înapoi</span>
+</button>
+
+<section
+  class="retete__section"
+  *ngFor="let r of recipes; let i = index"
+  [class.crem]="i % 2 === 1"
+>
+  <div class="retete__inner">
+    <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
+      <div class="feature-card__media">
+        <img [src]="r.img" [alt]="r.title" />
+        <span class="feature-card__badge">REȚETĂ</span>
+      </div>
+      <div class="feature-card__content">
+        <h2 class="feature-card__title">{{ r.title }}</h2>
+        <p class="feature-card__text">{{ r.excerpt }}</p>
+        <a class="btn btn--outline" [routerLink]="['/retete', r.slug]">
+          VEZI REȚETA <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>

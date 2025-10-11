@@ -1,6 +1,3 @@
-/* =======================
-   Bază
-======================= */
 html,
 body {
   height: 100%;
@@ -31,9 +28,6 @@ section p {
   color: #f5f5f5;
 }
 
-/* =======================
-   Hero
-======================= */
 .hero {
   position: relative;
   display: grid;
@@ -69,33 +63,38 @@ section p {
   z-index: -1;
 }
 
-.hero .hero__logo{
+.hero .hero__logo {
   position: absolute;
-  top: 1rem; left: 50%; transform: translateX(-50%);
-  height: clamp(90px, 10vw, 140px); width: auto;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(90px, 10vw, 140px);
+  width: auto;
 
-  background: transparent; padding: 0; border-radius: 0; box-shadow: none;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.45));
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
   z-index: 2;
-  user-select: none; -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-drag: none;
 
   cursor: pointer;
-  transition: transform .22s ease, filter .22s ease;
+  transition: transform 0.22s ease, filter 0.22s ease;
   will-change: transform, filter;
 }
 
-.hero .hero__logo:hover{
+.hero .hero__logo:hover {
   transform: translateX(-50%) scale(1.05);
-  filter:
-    drop-shadow(0 6px 14px rgba(0,0,0,.45))
-    drop-shadow(0 0 6px rgba(234,215,197,.28));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 6px rgba(234, 215, 197, 0.28));
 }
 
-.hero .hero__logo:focus-visible{
+.hero .hero__logo:focus-visible {
   outline: none;
-  box-shadow:
-    0 0 0 2px rgba(255,255,255,.75),
-    0 0 0 4px rgba(234,215,197,.35);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75),
+    0 0 0 4px rgba(234, 215, 197, 0.35);
   border-radius: 6px;
 }
 
@@ -237,9 +236,6 @@ section p {
   z-index: 40;
 }
 
-/* =======================
-   Secțiune Split (base)
-======================= */
 .split {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -352,7 +348,7 @@ section p {
   margin: 0;
   max-width: 52ch;
   line-height: 1.65;
-  color: #252525; /* mix($text-dark, #000, 85%) */
+  color: #252525;
   opacity: 0.95;
 }
 
@@ -374,9 +370,6 @@ section p {
   pointer-events: none;
 }
 
-/* =======================
-   Secțiune Meniu-info
-======================= */
 .menu-info {
   position: relative;
   display: grid;
@@ -440,9 +433,6 @@ section p {
   }
 }
 
-/* =======================
-   Butoane – bază & variante
-======================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -468,13 +458,13 @@ section p {
 .btn--outline {
   background: transparent;
   color: #6b4a2e;
-  border: 1.5px solid #46301e; /* mix($maro,#000,65%) */
+  border: 1.5px solid #46301e;
   box-shadow: 0 2px 10px rgba(107, 74, 46, 0.12);
 }
 .btn--outline:hover {
   background: rgba(234, 224, 208, 0.45);
-  color: #5b3f27; /* mix($maro,#000,85%) */
-  border-color: #503822; /* mix($maro,#000,75%) */
+  color: #5b3f27;
+  border-color: #503822;
 }
 .btn--outline:focus-visible {
   outline: none;
@@ -485,12 +475,12 @@ section p {
 .btn--filled {
   background: #6b4a2e;
   color: #eae0d0;
-  border: 1.5px solid #563b25; /* mix($maro,#000,80%) */
+  border: 1.5px solid #563b25;
   box-shadow: 0 6px 18px rgba(107, 74, 46, 0.28);
 }
 .btn--filled:hover {
   box-shadow: 0 10px 24px rgba(107, 74, 46, 0.36);
-  background: #62442a; /* mix($maro,#000,92%) */
+  background: #62442a;
 }
 .btn--filled:focus-visible {
   outline: none;
@@ -498,9 +488,6 @@ section p {
     0 0 0 6px rgba(107, 74, 46, 0.55);
 }
 
-/* =======================
-   Ajustări specifice în .split
-======================= */
 .split .btn.btn--outline {
   padding: 0.6rem 0.8rem;
   min-inline-size: 9rem;
@@ -533,9 +520,6 @@ section p {
   }
 }
 
-/* =======================
-   Varianta ROOMS
-======================= */
 .split--rooms {
   background: #eae0d0;
 }
@@ -569,9 +553,6 @@ section p {
   }
 }
 
-/* =======================
-   Contact
-======================= */
 .contact {
   padding: clamp(2.5rem, 6vw, 5rem) 1rem;
   color: #f5f5f5;
@@ -656,7 +637,7 @@ section p {
   transition: color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
 }
 .contact .contact__list .contact__item a:hover {
-  color: #ece2d4; /* mix($crem,#fff,92%) */
+  color: #ece2d4;
   border-color: rgba(234, 224, 208, 0.8);
   opacity: 1;
 }
@@ -680,7 +661,6 @@ section p {
   height: min(60vh, 420px);
 }
 
-/* center cards/items on small screens */
 .contact .contact__card {
   text-align: center;
 }
@@ -696,7 +676,6 @@ section p {
   min-width: 20px;
 }
 
-/* contact title underline ornament */
 .contact .contact__title {
   position: relative;
   display: inline-block;
@@ -721,7 +700,6 @@ section p {
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.2));
 }
 
-/* paper texture bg hook */
 .contact::before {
   content: "";
   position: absolute;
@@ -740,7 +718,6 @@ section p {
   z-index: 1;
 }
 
-/* ===== Cards Meniu & Camere ===== */
 .features {
   display: grid;
   gap: clamp(16px, 3vw, 28px);
@@ -865,14 +842,14 @@ section p {
   font-size: clamp(1.8rem, 4.2vw, 2.6rem);
   font-weight: 800;
   line-height: 1.1;
-  color: #282828; /* mix($text-dark,#000,90%) */
+  color: #282828;
 }
 
 .feature-card__text {
   margin: 0;
   max-width: 60ch;
   line-height: 1.65;
-  color: #252525; /* mix($text-dark,#000,85%) */
+  color: #252525;
   opacity: 0.95;
 }
 
@@ -890,7 +867,6 @@ section:not(.hero) {
   margin-inline: auto;
 }
 
-/* (opțional) dacă vei avea și alte tipuri de butoane acolo */
 .features .feature-card__content .btn {
   justify-self: center;
   margin-inline: auto;

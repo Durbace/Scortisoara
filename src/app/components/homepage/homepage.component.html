@@ -1,184 +1,218 @@
 <section
-    class="hero"
-    aria-label="Scorțișoară"
-    style="--hero-bg: url('assets/images/scortisoara.jpg')"
-  >
-    <img src="assets/images/logo.png" alt="Logo Scorțișoară" class="hero__logo" />
+  class="hero"
+  aria-label="Scorțișoară"
+  style="--hero-bg: url('assets/images/scortisoara.jpg')"
+>
+  <img src="assets/images/logo.png" alt="Logo Scorțișoară" class="hero__logo" />
 
-    <nav class="hero__menu hero__menu--left">
-      <a href="#">ACASĂ</a>
-      <a href="#">REȚETE</a>
-      <div
-        class="dropdown"
-        (mouseenter)="openHover($event)"
-        (mouseleave)="closeHover($event)"
-        (focusin)="openHover($event)"
-        (focusout)="closeHover($event)"
+  <nav class="hero__menu hero__menu--left">
+    <a href="#">ACASĂ</a>
+    <a routerLink="/retete">REȚETE</a>
+    <div
+      class="dropdown"
+      (mouseenter)="openHover($event)"
+      (mouseleave)="closeHover($event)"
+      (focusin)="openHover($event)"
+      (focusout)="closeHover($event)"
+    >
+      <button class="trigger">ORIGINI</button>
+      <ul class="submenu">
+        <li><a href="#">Ceylon (Sri Lanka)</a></li>
+        <li><a href="#">Cassia (China)</a></li>
+        <li><a href="#">Saigon (Vietnam)</a></li>
+        <li><a href="#">Korintje (Indonezia)</a></li>
+        <li><a href="#">Madagascar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class="hero__menu hero__menu--right">
+    <a href="#">BLOG</a>
+    <a href="#contact">CONTACT</a>
+
+    <div
+      class="dropdown"
+      (mouseenter)="openHover($event)"
+      (mouseleave)="closeHover($event)"
+      (focusin)="openHover($event)"
+      (focusout)="closeHover($event)"
+    >
+      <button class="trigger">RESURSE</button>
+      <ul class="submenu">
+        <li><a href="#">DESPRE</a></li>
+        <li><a href="#">GALERIE</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">GHID DE CUMPĂRARE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero__inner">
+    <h1 class="hero__headline">
+      <span>Bun venit la</span>
+      <span class="brand">Universul Scorțișoarei</span>
+      <span>– gust, știință și rețete.</span>
+    </h1>
+  </div>
+</section>
+
+<section class="menu-info" aria-label="Ghid Rapid al Scorțișoarei">
+  <img
+    class="menu-info__bg"
+    src="assets/images/sectiune1.jpg"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <div class="menu-info__content">
+    <h2 class="menu-info__title">Ghid Rapid al Scorțișoarei</h2>
+
+    <p class="menu-info__line">
+      <strong>Ceylon vs. Cassia:</strong> Ceylon = aromă fină, note florale;
+      Cassia = intensă, dulce-picantă.
+    </p>
+
+    <p class="menu-info__line">
+      <strong>Dozaj recomandat:</strong> ½–1 linguriță/porție (în funcție de
+      rețetă).
+    </p>
+
+    <p class="menu-info__line">
+      <strong>Pairing-uri excelente:</strong> mere, dovleac, cafea, iaurt, ovăz,
+      ciocolată, miel.
+    </p>
+
+    <p class="menu-info__line">
+      <strong>Depozitare:</strong> borcan etanș, loc răcoros și întunecat; ideal
+      sub 6–8 luni pentru vârf de aromă.
+    </p>
+
+    <p class="menu-info__line">
+      <em>Notă:</em> informațiile au scop culinar-informativ.
+    </p>
+  </div>
+</section>
+
+<section class="features" aria-label="Rețete & Tipuri">
+  <article class="feature-card">
+    <div class="feature-card__media">
+      <img
+        src="assets/images/retete-scortisoara.jpg"
+        alt="Rețete cu scorțișoară"
+      />
+      <span class="feature-card__badge">REȚETE</span>
+    </div>
+    <div class="feature-card__content">
+      <h2 class="feature-card__title">REȚETE CU SCORȚIȘOARĂ</h2>
+      <p class="feature-card__text">
+        De la rulouri cu scorțișoară și granola crocantă, până la curry-uri
+        senzoriale și latte-uri aromate. Filtrează după tip (desert, mic-dejun,
+        băuturi, sărate) și nivel de dificultate.
+      </p>
+      <a class="btn btn--outline" routerLink="/retete">
+        VEZI REȚETELE <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </article>
+
+  <article class="feature-card feature-card--reverse feature-card--crem">
+    <div class="feature-card__media">
+      <img
+        src="assets/images/tipuri-scortisoara.jpg"
+        alt="Tipuri de scorțișoară și origini"
+      />
+      <span class="feature-card__badge">TIPURI & ORIGINI</span>
+    </div>
+    <div class="feature-card__content">
+      <h2 class="feature-card__title">TIPURI & ORIGINI</h2>
+      <p class="feature-card__text">
+        Învață diferențele dintre Ceylon și Cassia: profiluri de aromă,
+        intensitate, culoare și cele mai bune utilizări. Descoperă de unde
+        provin și cum să alegi varianta potrivită pentru rețetele tale.
+      </p>
+      <a class="btn btn--outline" href="#"
+        >DESCOPERĂ TIPURILE <span aria-hidden="true">→</span></a
       >
-        <button class="trigger">ORIGINI</button>
-        <ul class="submenu">
-          <li><a href="#">Ceylon (Sri Lanka)</a></li>
-          <li><a href="#">Cassia (China)</a></li>
-          <li><a href="#">Saigon (Vietnam)</a></li>
-          <li><a href="#">Korintje (Indonezia)</a></li>
-          <li><a href="#">Madagascar</a></li>
+    </div>
+  </article>
+</section>
+
+<section
+  class="contact maro"
+  id="contact"
+  aria-label="Contact"
+  style="--paper-bg: url('assets/textures/paper-texture.jpg')"
+>
+  <div class="contact__inner">
+    <h2 class="contact__title">Contact & Colaborări</h2>
+
+    <div class="contact__grid">
+      <div class="contact__card">
+        <h3 class="contact__subtitle">Adresă</h3>
+        <address class="contact__address">
+          <p>Loc. Mărăcineni, DN2 E85, Nr. 1</p>
+          <p>Județul Buzău</p>
+        </address>
+      </div>
+
+      <div class="contact__card">
+        <h3 class="contact__subtitle">Telefon</h3>
+        <ul class="contact__list">
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"
+                />
+              </svg>
+            </span>
+            <a href="tel:0238717213">0238.717.213</a>
+          </li>
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <path
+                  d="M19 7V3H7v4H5a3 3 0 00-3 3v7a3 3 0 003 3h2v-3h10v3h2a3 3 0 003-3v-7a3 3 0 00-3-3h-2zM9 5h8v2H9V5zm10 12H5a1 1 0 01-1-1v-7a1 1 0 011-1h14a1 1 0 011 1v7a1 1 0 01-1 1zM8 13h8v2H8v-2z"
+                />
+              </svg>
+            </span>
+            <a href="tel:0238717213">0238.717.213</a>
+          </li>
         </ul>
       </div>
-    </nav>
 
-    <nav class="hero__menu hero__menu--right">
-      <a href="#">BLOG</a>
-      <a href="#contact">CONTACT</a>
-
-      <div
-        class="dropdown"
-        (mouseenter)="openHover($event)"
-        (mouseleave)="closeHover($event)"
-        (focusin)="openHover($event)"
-        (focusout)="closeHover($event)"
-      >
-        <button class="trigger">RESURSE</button>
-        <ul class="submenu">
-          <li><a href="#">DESPRE</a></li>
-          <li><a href="#">GALERIE</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">GHID DE CUMPĂRARE</a></li>
+      <div class="contact__card">
+        <h3 class="contact__subtitle">E-mail</h3>
+        <ul class="contact__list">
+          <li class="contact__item">
+            <span class="contact__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <path
+                  d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </span>
+            <a href="mailto:moara.dragaicilor@gmail.com"
+              >moara.dragaicilor&#64;gmail.com</a
+            >
+          </li>
         </ul>
       </div>
-    </nav>
-
-    <div class="hero__inner">
-      <h1 class="hero__headline">
-        <span>Bun venit la</span>
-        <span class="brand">Universul Scorțișoarei</span>
-        <span>– gust, știință și rețete.</span>
-      </h1>
     </div>
-  </section>
-
-  <!-- GHID RAPID (fost „Meniu Zilnic”) -->
-  <section class="menu-info" aria-label="Ghid Rapid al Scorțișoarei">
-    <img
-      class="menu-info__bg"
-      src="assets/images/sectiune1.jpg"
-      alt=""
-      aria-hidden="true"
-    />
-
-    <div class="menu-info__content">
-      <h2 class="menu-info__title">Ghid Rapid al Scorțișoarei</h2>
-
-      <p class="menu-info__line">
-        <strong>Ceylon vs. Cassia:</strong> Ceylon = aromă fină, note florale; Cassia = intensă, dulce-picantă.
-      </p>
-
-      <p class="menu-info__line">
-        <strong>Dozaj recomandat:</strong> ½–1 linguriță/porție (în funcție de rețetă).
-      </p>
-
-      <p class="menu-info__line">
-        <strong>Pairing-uri excelente:</strong> mere, dovleac, cafea, iaurt, ovăz, ciocolată, miel.
-      </p>
-
-      <p class="menu-info__line">
-        <strong>Depozitare:</strong> borcan etanș, loc răcoros și întunecat; ideal sub 6–8 luni pentru vârf de aromă.
-      </p>
-
-      <p class="menu-info__line">
-        <em>Notă:</em> informațiile au scop culinar-informativ.
-      </p>
-    </div>
-  </section>
-
-  <!-- REȚETE & TIPURI (fost „Meniu & Camere”) -->
-  <section class="features" aria-label="Rețete & Tipuri">
-    <!-- Card 1: REȚETE -->
-    <article class="feature-card">
-      <div class="feature-card__media">
-        <img src="assets/images/retete-scortisoara.jpg" alt="Rețete cu scorțișoară" />
-        <span class="feature-card__badge">REȚETE</span>
-      </div>
-      <div class="feature-card__content">
-        <h2 class="feature-card__title">REȚETE CU SCORȚIȘOARĂ</h2>
-        <p class="feature-card__text">
-          De la rulouri cu scorțișoară și granola crocantă, până la curry-uri senzoriale și latte-uri aromate.
-          Filtrează după tip (desert, mic-dejun, băuturi, sărate) și nivel de dificultate.
-        </p>
-        <a class="btn btn--outline" href="#">VEZI REȚETELE <span aria-hidden="true">→</span></a>
-      </div>
-    </article>
-
-    <!-- Card 2: TIPURI & ORIGINI -->
-    <article class="feature-card feature-card--reverse feature-card--crem">
-      <div class="feature-card__media">
-        <img src="assets/images/tipuri-scortisoara.jpg" alt="Tipuri de scorțișoară și origini" />
-        <span class="feature-card__badge">TIPURI & ORIGINI</span>
-      </div>
-      <div class="feature-card__content">
-        <h2 class="feature-card__title">TIPURI & ORIGINI</h2>
-        <p class="feature-card__text">
-          Învață diferențele dintre Ceylon și Cassia: profiluri de aromă, intensitate, culoare și cele mai bune utilizări.
-          Descoperă de unde provin și cum să alegi varianta potrivită pentru rețetele tale.
-        </p>
-        <a class="btn btn--outline" href="#">DESCOPERĂ TIPURILE <span aria-hidden="true">→</span></a>
-      </div>
-    </article>
-  </section>
-
-  <!-- CONTACT / COLABORĂRI -->
-  <section
-    class="contact maro"
-    id="contact"
-    aria-label="Contact"
-    style="--paper-bg: url('assets/textures/paper-texture.jpg')"
-  >
-    <div class="contact__inner">
-      <h2 class="contact__title">Contact & Colaborări</h2>
-
-      <div class="contact__grid">
-        <div class="contact__card">
-          <h3 class="contact__subtitle">Adresă</h3>
-          <address class="contact__address">
-            <p>Loc. Mărăcineni, DN2 E85, Nr. 1</p>
-            <p>Județul Buzău</p>
-          </address>
-        </div>
-
-        <div class="contact__card">
-          <h3 class="contact__subtitle">Telefon</h3>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <span class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/>
-                </svg>
-              </span>
-              <a href="tel:0238717213">0238.717.213</a>
-            </li>
-            <li class="contact__item">
-              <span class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M19 7V3H7v4H5a3 3 0 00-3 3v7a3 3 0 003 3h2v-3h10v3h2a3 3 0 003-3v-7a3 3 0 00-3-3h-2zM9 5h8v2H9V5zm10 12H5a1 1 0 01-1-1v-7a1 1 0 011-1h14a1 1 0 011 1v7a1 1 0 01-1 1zM8 13h8v2H8v-2z"/>
-                </svg>
-              </span>
-              <a href="tel:0238717213">0238.717.213</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="contact__card">
-          <h3 class="contact__subtitle">E-mail</h3>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <span class="contact__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-              </span>
-              <a href="mailto:moara.dragaicilor@gmail.com">moara.dragaicilor&#64;gmail.com</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
