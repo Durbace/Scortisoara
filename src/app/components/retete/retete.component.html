@@ -1,6 +1,20 @@
-<button class="back-btn" type="button" (click)="onBack()" aria-label="Înapoi la acasă">
-  <svg class="back-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-    <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
+<button
+  class="back-btn"
+  type="button"
+  (click)="onBack()"
+  aria-label="Înapoi la acasă"
+>
+  <svg
+    class="back-btn__icon"
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"
+    />
   </svg>
   <span class="back-btn__label">Înapoi</span>
 </button>
@@ -16,13 +30,80 @@
         <img [src]="r.img" [alt]="r.title" />
         <span class="feature-card__badge">REȚETĂ</span>
       </div>
+
       <div class="feature-card__content">
         <h2 class="feature-card__title">{{ r.title }}</h2>
         <p class="feature-card__text">{{ r.excerpt }}</p>
-        <a class="btn btn--outline" [routerLink]="['/retete', r.slug]">
+
+        <button
+          class="btn btn--outline"
+          type="button"
+          (click)="openModal(r.slug)"
+        >
           VEZI REȚETA <span aria-hidden="true">→</span>
-        </a>
+        </button>
       </div>
     </article>
   </div>
 </section>
+
+<div
+  class="modal"
+  *ngIf="modalOpen && activeRecipe"
+  (keydown)="onKeydown($event)"
+>
+  <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
+
+  <div
+    class="modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="activeRecipe!.title"
+  >
+    <header class="modal__header">
+      <h3 class="modal__title">{{ activeRecipe.title }}</h3>
+      <button
+        #modalCloseBtn
+        class="modal__close"
+        type="button"
+        (click)="closeModal()"
+        aria-label="Închide"
+      >
+        ✕
+      </button>
+    </header>
+
+    <div
+      class="modal__meta"
+      *ngIf="activeRecipe.prep || activeRecipe.cook || activeRecipe.servings"
+    >
+      <span *ngIf="activeRecipe.prep"
+        ><strong>Prep:</strong> {{ activeRecipe.prep }}</span
+      >
+      <span *ngIf="activeRecipe.cook"
+        ><strong>Gătire:</strong> {{ activeRecipe.cook }}</span
+      >
+      <span *ngIf="activeRecipe.servings"
+        ><strong>Porții:</strong> {{ activeRecipe.servings }}</span
+      >
+    </div>
+
+    <div class="modal__grid">
+      <aside class="modal__aside">
+        <img [src]="activeRecipe.img" [alt]="activeRecipe.title" />
+      </aside>
+
+      <section class="modal__content">
+        <h4>Ingrediente</h4>
+        <ul class="modal__list">
+          <li *ngFor="let ing of activeRecipe.ingredients">{{ ing }}</li>
+        </ul>
+
+        <h4>Mod de preparare</h4>
+        <ol class="modal__list">
+          <li *ngFor="let step of activeRecipe.steps">{{ step }}</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</div>
