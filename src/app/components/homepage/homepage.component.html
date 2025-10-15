@@ -1,13 +1,15 @@
 <section
   class="hero"
-  aria-label="Scorțișoară"
+  [attr.aria-label]="'home.hero.aria' | transloco"
   style="--hero-bg: url('assets/images/scortisoara.jpg')"
 >
-  <img src="assets/images/logo.png" alt="Logo Scorțișoară" class="hero__logo" />
+  <img src="assets/images/logo.png" alt="Logo" class="hero__logo" />
 
   <nav class="hero__menu hero__menu--left">
-    <a routerLink="/">ACASĂ</a>
-    <a routerLink="/retete">REȚETE</a>
+    <a [routerLink]="['/', lang.current()]">{{ "nav.home" | transloco }}</a>
+    <a [routerLink]="['/', lang.current(), 'retete']">{{
+      "nav.recipes" | transloco
+    }}</a>
 
     <div
       class="dropdown"
@@ -16,21 +18,49 @@
       (focusin)="openHover($event)"
       (focusout)="closeHover($event)"
     >
-      <button class="trigger" (click)="goToTypes()">ORIGINI</button>
+      <button class="trigger" [routerLink]="['/', lang.current(), 'tipuri']">
+        {{ "nav.types" | transloco }}
+      </button>
 
       <ul class="submenu">
-        <li><a (click)="goToType('ceylon')">Ceylon (Sri Lanka)</a></li>
-        <li><a (click)="goToType('cassia-china')">Cassia (China)</a></li>
-        <li><a (click)="goToType('saigon')">Saigon (Vietnam)</a></li>
-        <li><a (click)="goToType('korintje')">Korintje (Indonezia)</a></li>
-        <li><a (click)="goToType('madagascar')">Madagascar</a></li>
+        <li>
+          <a [routerLink]="['/', lang.current(), 'tipuri']" fragment="ceylon">
+            {{ "types.ceylon" | transloco }}
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/', lang.current(), 'tipuri']"
+            fragment="cassia-china"
+          >
+            {{ "types.cassiaChina" | transloco }}
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/', lang.current(), 'tipuri']" fragment="saigon">
+            {{ "types.saigon" | transloco }}
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/', lang.current(), 'tipuri']" fragment="korintje">
+            {{ "types.korintje" | transloco }}
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/', lang.current(), 'tipuri']"
+            fragment="madagascar"
+          >
+            {{ "types.madagascar" | transloco }}
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <nav class="hero__menu hero__menu--right">
-    <a href="#">BLOG</a>
-    <a href="#contact">CONTACT</a>
+    <a href="#">{{ "nav.blog" | transloco }}</a>
+    <a href="#contact">{{ "nav.contact" | transloco }}</a>
 
     <div
       class="dropdown"
@@ -39,26 +69,40 @@
       (focusin)="openHover($event)"
       (focusout)="closeHover($event)"
     >
-      <button class="trigger">RESURSE</button>
-      <ul class="submenu">
-        <li><a href="#">DESPRE</a></li>
-        <li><a href="#">GALERIE</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">GHID DE CUMPĂRARE</a></li>
+      <button class="trigger">{{ "nav.languages" | transloco }}</button>
+      <ul class="submenu" role="menu">
+        <li role="none">
+          <button role="menuitem" type="button" (click)="lang.switch('ro')">
+            {{ "lang.ro" | transloco }}
+          </button>
+        </li>
+        <li role="none">
+          <button role="menuitem" type="button" (click)="lang.switch('en')">
+            {{ "lang.en" | transloco }}
+          </button>
+        </li>
+        <li role="none">
+          <button role="menuitem" type="button" (click)="lang.switch('de')">
+            {{ "lang.de" | transloco }}
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="hero__inner">
     <h1 class="hero__headline">
-      <span>Bun venit la</span>
-      <span class="brand">Universul Scorțișoarei</span>
-      <span>– gust, știință și rețete.</span>
+      <span>{{ "home.hero.line1" | transloco }}</span>
+      <span class="brand">{{ "home.hero.brand" | transloco }}</span>
+      <span>{{ "home.hero.line3" | transloco }}</span>
     </h1>
   </div>
 </section>
 
-<section class="menu-info" aria-label="Ghid Rapid al Scorțișoarei">
+<section
+  class="menu-info"
+  [attr.aria-label]="'home.quickGuide.aria' | transloco"
+>
   <img
     class="menu-info__bg"
     src="assets/images/sectiune1.jpg"
@@ -67,52 +111,54 @@
   />
 
   <div class="menu-info__content">
-    <h2 class="menu-info__title">Ghid Rapid al Scorțișoarei</h2>
+    <h2 class="menu-info__title">{{ "home.quickGuide.title" | transloco }}</h2>
 
+    <p
+      class="menu-info__line"
+      [innerHTML]="'home.quickGuide.line1' | transloco"
+    ></p>
+    <p
+      class="menu-info__line"
+      [innerHTML]="'home.quickGuide.line2' | transloco"
+    ></p>
+    <p
+      class="menu-info__line"
+      [innerHTML]="'home.quickGuide.line3' | transloco"
+    ></p>
+    <p
+      class="menu-info__line"
+      [innerHTML]="'home.quickGuide.line4' | transloco"
+    ></p>
     <p class="menu-info__line">
-      <strong>Ceylon vs. Cassia:</strong> Ceylon = aromă fină, note florale;
-      Cassia = intensă, dulce-picantă.
-    </p>
-
-    <p class="menu-info__line">
-      <strong>Dozaj recomandat:</strong> ½–1 linguriță/porție (în funcție de
-      rețetă).
-    </p>
-
-    <p class="menu-info__line">
-      <strong>Pairing-uri excelente:</strong> mere, dovleac, cafea, iaurt, ovăz,
-      ciocolată, miel.
-    </p>
-
-    <p class="menu-info__line">
-      <strong>Depozitare:</strong> borcan etanș, loc răcoros și întunecat; ideal
-      sub 6–8 luni pentru vârf de aromă.
-    </p>
-
-    <p class="menu-info__line">
-      <em>Notă:</em> informațiile au scop culinar-informativ.
+      <em>{{ "note" | transloco }}</em>
     </p>
   </div>
 </section>
 
-<section class="features" aria-label="Rețete & Tipuri">
+<section
+  class="features"
+  [attr.aria-label]="'home.sections.features' | transloco"
+>
   <article class="feature-card">
     <div class="feature-card__media">
       <img
         src="assets/images/retete-scortisoara.jpg"
-        alt="Rețete cu scorțișoară"
+        [alt]="'imgAlt.recipes' | transloco"
       />
-      <span class="feature-card__badge">REȚETE</span>
+      <span class="feature-card__badge">{{ "badge.recipes" | transloco }}</span>
     </div>
     <div class="feature-card__content">
-      <h2 class="feature-card__title">REȚETE CU SCORȚIȘOARĂ</h2>
+      <h2 class="feature-card__title">
+        {{ "home.cards.recipes.title" | transloco }}
+      </h2>
       <p class="feature-card__text">
-        De la rulouri cu scorțișoară și granola crocantă, până la curry-uri
-        senzoriale și latte-uri aromate. Filtrează după tip (desert, mic-dejun,
-        băuturi, sărate) și nivel de dificultate.
+        {{ "home.cards.recipes.text" | transloco }}
       </p>
-      <a class="btn btn--outline" routerLink="/retete">
-        VEZI REȚETELE <span aria-hidden="true">→</span>
+      <a
+        class="btn btn--outline"
+        [routerLink]="['/', lang.current(), 'retete']"
+      >
+        {{ "cta.seeRecipes" | transloco }} <span aria-hidden="true">→</span>
       </a>
     </div>
   </article>
@@ -121,100 +167,76 @@
     <div class="feature-card__media">
       <img
         src="assets/images/tipuri-scortisoara.jpg"
-        alt="Tipuri de scorțișoară și origini"
+        [alt]="'imgAlt.types' | transloco"
       />
-      <span class="feature-card__badge">TIPURI & ORIGINI</span>
+      <span class="feature-card__badge">{{ "badge.types" | transloco }}</span>
     </div>
     <div class="feature-card__content">
-      <h2 class="feature-card__title">TIPURI & ORIGINI</h2>
+      <h2 class="feature-card__title">
+        {{ "home.cards.types.title" | transloco }}
+      </h2>
       <p class="feature-card__text">
-        Învață diferențele dintre Ceylon și Cassia: profiluri de aromă,
-        intensitate, culoare și cele mai bune utilizări. Descoperă de unde
-        provin și cum să alegi varianta potrivită pentru rețetele tale.
+        {{ "home.cards.types.text" | transloco }}
       </p>
-      <a class="btn btn--outline" routerLink="/tipuri"
-        >DESCOPERĂ TIPURILE <span aria-hidden="true">→</span></a
+      <a
+        class="btn btn--outline"
+        [routerLink]="['/', lang.current(), 'tipuri']"
       >
+        {{ "cta.discoverTypes" | transloco }} <span aria-hidden="true">→</span>
+      </a>
     </div>
   </article>
 </section>
 
 <section
   class="contact maro"
-  id="contact"
-  aria-label="Contact"
   style="--paper-bg: url('assets/textures/paper-texture.jpg')"
 >
   <div class="contact__inner">
-    <h2 class="contact__title">Contact & Colaborări</h2>
+    <h2 class="contact__title">{{ "guide.title" | transloco }}</h2>
 
     <div class="contact__grid">
       <div class="contact__card">
-        <h3 class="contact__subtitle">Adresă</h3>
-        <address class="contact__address">
-          <p>Loc. Mărăcineni, DN2 E85, Nr. 1</p>
-          <p>Județul Buzău</p>
-        </address>
+        <h3 class="contact__subtitle">
+          {{ "guide.cards.storage.title" | transloco }}
+        </h3>
+        <p class="contact__address">
+          {{ "guide.cards.storage.text" | transloco }}
+        </p>
       </div>
 
       <div class="contact__card">
-        <h3 class="contact__subtitle">Telefon</h3>
-        <ul class="contact__list">
-          <li class="contact__item">
-            <span class="contact__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                width="20"
-                height="20"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"
-                />
-              </svg>
-            </span>
-            <a href="tel:0238717213">0238.717.213</a>
-          </li>
-          <li class="contact__item">
-            <span class="contact__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                width="20"
-                height="20"
-                fill="currentColor"
-              >
-                <path
-                  d="M19 7V3H7v4H5a3 3 0 00-3 3v7a3 3 0 003 3h2v-3h10v3h2a3 3 0 003-3v-7a3 3 0 00-3-3h-2zM9 5h8v2H9V5zm10 12H5a1 1 0 01-1-1v-7a1 1 0 011-1h14a1 1 0 011 1v7a1 1 0 01-1 1zM8 13h8v2H8v-2z"
-                />
-              </svg>
-            </span>
-            <a href="tel:0238717213">0238.717.213</a>
-          </li>
-        </ul>
+        <h3 class="contact__subtitle">
+          {{ "guide.cards.dosage.title" | transloco }}
+        </h3>
+        <p class="contact__address">
+          {{ "guide.cards.dosage.text" | transloco }}
+        </p>
       </div>
 
       <div class="contact__card">
-        <h3 class="contact__subtitle">E-mail</h3>
-        <ul class="contact__list">
-          <li class="contact__item">
-            <span class="contact__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                width="20"
-                height="20"
-                fill="currentColor"
-              >
-                <path
-                  d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                />
-              </svg>
-            </span>
-            <a href="mailto:moara.dragaicilor@gmail.com"
-              >moara.dragaicilor&#64;gmail.com</a
-            >
-          </li>
-        </ul>
+        <h3 class="contact__subtitle">
+          {{ "guide.cards.faq.title" | transloco }}
+        </h3>
+
+        <details class="faq">
+          <summary class="faq__q">
+            {{ "guide.cards.faq.q1" | transloco }}
+          </summary>
+          <p class="faq__a">{{ "guide.cards.faq.a1" | transloco }}</p>
+        </details>
+
+        <details class="faq">
+          <summary class="faq__q">
+            {{ "guide.cards.faq.q2" | transloco }}
+          </summary>
+          <p class="faq__a">{{ "guide.cards.faq.a2" | transloco }}</p>
+        </details>
       </div>
     </div>
+
+    <p style="text-align: center; opacity: 0.8; margin-top: 1rem">
+      <em>{{ "guide.note" | transloco }}</em>
+    </p>
   </div>
 </section>

@@ -2,7 +2,7 @@
   class="back-btn"
   type="button"
   (click)="onBack()"
-  aria-label="Înapoi la acasă"
+  [attr.aria-label]="(labels$ | async)?.back"
 >
   <svg
     class="back-btn__icon"
@@ -16,94 +16,109 @@
       d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"
     />
   </svg>
-  <span class="back-btn__label">Înapoi</span>
+  <span class="back-btn__label">{{ (labels$ | async)?.back }}</span>
 </button>
 
-<section
-  class="retete__section"
-  *ngFor="let r of recipes; let i = index"
-  [class.crem]="i % 2 === 1"
->
-  <div class="retete__inner">
-    <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
-      <div class="feature-card__media">
-        <img [src]="r.img" [alt]="r.title" />
-        <span class="feature-card__badge">REȚETĂ</span>
-      </div>
+<ng-container *ngIf="recipes$ | async as recipes; else loading">
+  <section
+    class="retete__section"
+    *ngFor="let r of recipes; let i = index"
+    [class.crem]="i % 2 === 1"
+  >
+    <div class="retete__inner">
+      <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
+        <div class="feature-card__media">
+          <img [src]="r.img" [alt]="r.title" />
+          <span class="feature-card__badge">{{
+            (labels$ | async)?.badge
+          }}</span>
+        </div>
 
-      <div class="feature-card__content">
-        <h2 class="feature-card__title">{{ r.title }}</h2>
-        <p class="feature-card__text">{{ r.excerpt }}</p>
+        <div class="feature-card__content">
+          <h2 class="feature-card__title">{{ r.title }}</h2>
+          <p class="feature-card__text">{{ r.excerpt }}</p>
 
-        <button
-          class="btn btn--outline"
-          type="button"
-          (click)="openModal(r.slug)"
-        >
-          VEZI REȚETA <span aria-hidden="true">→</span>
-        </button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<div
-  class="modal"
-  *ngIf="modalOpen && activeRecipe"
-  (keydown)="onKeydown($event)"
->
-  <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
+          <button
+            class="btn btn--outline"
+            type="button"
+            (click)="openModal(r.slug, recipes)"
+          >
+            {{ (labels$ | async)?.seeRecipe }} <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <div
-    class="modal__dialog"
-    role="dialog"
-    aria-modal="true"
-    [attr.aria-label]="activeRecipe!.title"
+    class="modal"
+    *ngIf="modalOpen && activeRecipe"
+    (keydown)="onKeydown($event)"
   >
-    <header class="modal__header">
-      <h3 class="modal__title">{{ activeRecipe.title }}</h3>
-      <button
-        #modalCloseBtn
-        class="modal__close"
-        type="button"
-        (click)="closeModal()"
-        aria-label="Închide"
-      >
-        ✕
-      </button>
-    </header>
+    <div
+      class="modal__backdrop"
+      (click)="closeModal()"
+      aria-hidden="true"
+    ></div>
 
     <div
-      class="modal__meta"
-      *ngIf="activeRecipe.prep || activeRecipe.cook || activeRecipe.servings"
+      class="modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="activeRecipe!.title"
     >
-      <span *ngIf="activeRecipe.prep"
-        ><strong>Prep:</strong> {{ activeRecipe.prep }}</span
-      >
-      <span *ngIf="activeRecipe.cook"
-        ><strong>Gătire:</strong> {{ activeRecipe.cook }}</span
-      >
-      <span *ngIf="activeRecipe.servings"
-        ><strong>Porții:</strong> {{ activeRecipe.servings }}</span
-      >
-    </div>
+      <header class="modal__header">
+        <h3 class="modal__title">{{ activeRecipe.title }}</h3>
+        <button
+          #modalCloseBtn
+          class="modal__close"
+          type="button"
+          (click)="closeModal()"
+          [attr.aria-label]="(labels$ | async)?.back"
+        >
+          ✕
+        </button>
+      </header>
 
-    <div class="modal__grid">
-      <aside class="modal__aside">
-        <img [src]="activeRecipe.img" [alt]="activeRecipe.title" />
-      </aside>
+      <div
+        class="modal__meta"
+        *ngIf="activeRecipe.prep || activeRecipe.cook || activeRecipe.servings"
+      >
+        <span *ngIf="activeRecipe.prep"
+          ><strong>{{ (labels$ | async)?.prep }}:</strong>
+          {{ activeRecipe.prep }}</span
+        >
+        <span *ngIf="activeRecipe.cook"
+          ><strong>{{ (labels$ | async)?.cook }}:</strong>
+          {{ activeRecipe.cook }}</span
+        >
+        <span *ngIf="activeRecipe.servings"
+          ><strong>{{ (labels$ | async)?.servings }}:</strong>
+          {{ activeRecipe.servings }}</span
+        >
+      </div>
 
-      <section class="modal__content">
-        <h4>Ingrediente</h4>
-        <ul class="modal__list">
-          <li *ngFor="let ing of activeRecipe.ingredients">{{ ing }}</li>
-        </ul>
+      <div class="modal__grid">
+        <aside class="modal__aside">
+          <img [src]="activeRecipe.img" [alt]="activeRecipe.title" />
+        </aside>
 
-        <h4>Mod de preparare</h4>
-        <ol class="modal__list">
-          <li *ngFor="let step of activeRecipe.steps">{{ step }}</li>
-        </ol>
-      </section>
+        <section class="modal__content">
+          <h4>{{ (labels$ | async)?.ingredients }}</h4>
+          <ul class="modal__list">
+            <li *ngFor="let ing of activeRecipe.ingredients">{{ ing }}</li>
+          </ul>
+
+          <h4>{{ (labels$ | async)?.steps }}</h4>
+          <ol class="modal__list">
+            <li *ngFor="let step of activeRecipe.steps">{{ step }}</li>
+          </ol>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #loading>
+  <p style="padding: 1rem; opacity: 0.7">…</p>
+</ng-template>

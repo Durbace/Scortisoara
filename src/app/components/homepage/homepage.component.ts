@@ -1,16 +1,19 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
+import { LanguageService } from '../../language.service';
+import { TranslocoModule } from '@jsverse/transloco';
+
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [ RouterModule],
+  imports: [RouterModule, TranslocoModule],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit, OnDestroy {
-   constructor(private router: Router) {}
-   
+  constructor(private router: Router, public lang: LanguageService) {}
+
   private hoverTimers = new WeakMap<HTMLElement, number>();
 
   openHover(evt: Event) {
@@ -128,7 +131,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
     window.removeEventListener('keydown', this.onKey);
   }
 
-   goToTypes() {
+  goToTypes() {
     this.router.navigate(['/tipuri']);
   }
 

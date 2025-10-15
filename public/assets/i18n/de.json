@@ -1,0 +1,322 @@
+{
+  "nav": {
+    "home": "STARTSEITE",
+    "recipes": "REZEPTE",
+    "types": "HERKUNFT",
+    "blog": "BLOG",
+    "contact": "KONTAKT",
+    "languages": "SPRACHEN"
+  },
+  "lang": { "ro": "RUMÄNISCH", "en": "ENGLISCH", "de": "DEUTSCH" },
+
+  "home": {
+    "hero": {
+      "aria": "Zimt",
+      "line1": "Willkommen in",
+      "brand": "der Welt des Zimts",
+      "line3": "– Geschmack, Wissenschaft & Rezepte."
+    },
+    "quickGuide": {
+      "aria": "Zimt – Schnellüberblick",
+      "title": "Zimt – Schnellüberblick",
+      "line1": "<strong>Ceylon vs. Cassia:</strong> Ceylon = fein, floral; Cassia = kräftig, süß-würzig.",
+      "line2": "<strong>Empfohlene Menge:</strong> ½–1 TL/Portion (je nach Rezept).",
+      "line3": "<strong>Gute Kombinationen:</strong> Äpfel, Kürbis, Kaffee, Joghurt, Hafer, Schokolade, Lamm.",
+      "line4": "<strong>Lagerung:</strong> Luftdichtes Glas, kühl & dunkel; ideal innerhalb von 6–8 Monaten."
+    },
+    "sections": { "features": "Rezepte & Sorten" },
+    "cards": {
+      "recipes": {
+        "title": "ZIMT-REZEPTE",
+        "text": "Von Zimtschnecken und knusprigem Granola bis zu duftenden Currys und gemütlichen Lattes. Filtere nach Typ und Schwierigkeit."
+      },
+      "types": {
+        "title": "SORTEN & HERKUNFT",
+        "text": "Unterschiede zwischen Ceylon und Cassia: Profile, Intensität, Farbe und beste Verwendung. Entdecke die Herkunft und triff die richtige Wahl."
+      }
+    }
+  },
+
+  "badge": { "recipes": "REZEPTE", "types": "SORTEN & HERKUNFT" },
+  "imgAlt": { "recipes": "Zimt-Rezepte", "types": "Zimtsorten und Herkunft" },
+  "cta": {
+    "seeRecipes": "REZEPTE ANSEHEN",
+    "discoverTypes": "SORTEN ENTDECKEN"
+  },
+  "note": "Hinweis: Angaben dienen kulinarischen/Informationszwecken.",
+
+  "guide": {
+    "title": "Praktischer Zimt-Leitfaden",
+    "cards": {
+      "storage": {
+        "title": "Richtige Lagerung",
+        "text": "Luftdichtes Glas, kühl und dunkel lagern. Für maximales Aroma: innerhalb von 6–8 Monaten verwenden."
+      },
+      "dosage": {
+        "title": "Dosierung & Sicherheit",
+        "text": "Für Hausrezepte: ½–1 TL pro Portion. Du magst ein feines Aroma? Wähle Ceylon."
+      },
+      "faq": {
+        "title": "Häufige Fragen",
+        "q1": "Ceylon vs. Cassia – was passt besser zu Desserts?",
+        "a1": "Ceylon liefert feine, florale Noten; Cassia ist kräftiger, süß-würzig.",
+        "q2": "Stangen oder Pulver?",
+        "a2": "Stangen für Aufgüsse/Milch; Pulver für Teige und schnelle Gewürzmischungen."
+      }
+    },
+    "note": "Hinweis: Angaben dienen kulinarischen/Informationszwecken."
+  },
+
+  "types": {
+    "ceylon": "Ceylon (Sri Lanka)",
+    "cassiaChina": "Cassia (China)",
+    "saigon": "Saigon (Vietnam)",
+    "korintje": "Korintje (Indonesien)",
+    "madagascar": "Madagaskar"
+  },
+
+  "recipes": {
+    "labels": {
+      "badge": "REZEPT",
+      "seeRecipe": "REZEPT ANSEHEN",
+      "prep": "Vorbereitung",
+      "cook": "Garen",
+      "servings": "Portionen",
+      "ingredients": "Zutaten",
+      "steps": "Zubereitung",
+      "back": "Zurück"
+    },
+    "items": {
+      "rulouri-cu-scortisoara": {
+        "title": "Zimtschnecken",
+        "excerpt": "Lockerer Teig, eine großzügige Zimtfüllung und samtiges Frosting. Perfekt zum Frühstück oder als Dessert.",
+        "prep": "20 Min.",
+        "cook": "25–30 Min.",
+        "servings": "12 Stück",
+        "ingredients": [
+          "500 g Weizenmehl (Type 405/550)",
+          "7 g Trockenhefe",
+          "250 ml lauwarme Milch",
+          "60 g Zucker",
+          "1 Ei + 1 Eigelb",
+          "60 g weiche Butter + 40 g geschmolzene Butter (für die Füllung)",
+          "3–4 EL gemahlener Zimt",
+          "80–100 g brauner Zucker",
+          "Prise Salz",
+          "Frosting: 120 g Frischkäse, 40 g Butter, 100 g Puderzucker, Vanille"
+        ],
+        "steps": [
+          "Milch, Hefe und 1 TL Zucker mischen; 5–10 Min. stehen lassen, bis es schäumt.",
+          "Mehl mit Zucker, Salz, Ei, Hefemilch und 60 g Butter verkneten. 60–90 Min. gehen lassen.",
+          "Teig rechteckig ausrollen, mit 40 g Butter bestreichen, braunen Zucker + Zimt darüberstreuen.",
+          "Straff aufrollen, in 12 Scheiben schneiden, in die Form setzen. 30 Min. gehen lassen.",
+          "Bei 180°C 25–30 Min. backen. Frosting zubereiten und auf die warmen Schnecken streichen."
+        ]
+      },
+      "granola-cu-scortisoara": {
+        "title": "Granola mit Zimt & Nüssen",
+        "excerpt": "Knusprige Haferflocken, geröstete Nüsse, Honig und Zimt. Perfekt mit Joghurt oder Milch.",
+        "prep": "10 Min.",
+        "cook": "22–28 Min.",
+        "servings": "ca. 10 Portionen",
+        "ingredients": [
+          "300 g Haferflocken",
+          "120 g Nüsse (Mandeln/Walnüsse/Pekannüsse), grob gehackt",
+          "60 g Kerne (Kürbis/Sonnenblume)",
+          "1–2 EL gemahlener Zimt",
+          "80 ml Kokos- oder Rapsöl",
+          "120 ml Honig oder Ahornsirup",
+          "Prise Salz",
+          "Optional: Rosinen/Cranberries (nach dem Backen unterheben)"
+        ],
+        "steps": [
+          "Haferflocken, Nüsse, Kerne, Zimt und Salz mischen.",
+          "Öl mit Honig verrühren; über die Mischung geben und gut vermengen.",
+          "Auf ein mit Backpapier belegtes Blech streichen. Bei 160–170°C 22–28 Min. backen, zur Hälfte wenden.",
+          "Vollständig abkühlen lassen (wird knusprig), dann Trockenfrüchte zugeben."
+        ]
+      },
+      "latte-cu-scortisoara": {
+        "title": "Zimt-Latte",
+        "excerpt": "Samtiger Espresso, aufgeschäumte Milch und eine Prise Zimt – wohlig und aromatisch.",
+        "prep": "5 Min.",
+        "cook": "—",
+        "servings": "1 Portion",
+        "ingredients": [
+          "1 Espresso-Shot (30–40 ml)",
+          "200 ml Milch (oder pflanzliche Alternative)",
+          "½ TL gemahlener Zimt",
+          "1–2 TL Zucker oder Sirup (nach Geschmack)"
+        ],
+        "steps": [
+          "Espresso nach Geschmack süßen.",
+          "Milch erhitzen und aufschäumen.",
+          "Milch über den Espresso gießen, mit Zimt bestäuben und sofort servieren."
+        ]
+      },
+      "mere-coapte-cu-scortisoara": {
+        "title": "Gebackene Äpfel mit Zimt & Honig",
+        "excerpt": "Langsam gebackene Äpfel, gefüllt mit Nüssen und Honig – veredelt mit warmem Zimt. Ein simples, tröstliches Dessert.",
+        "prep": "10 Min.",
+        "cook": "25–35 Min.",
+        "servings": "4 Portionen",
+        "ingredients": [
+          "4 feste Äpfel (z. B. Jonatan/Braeburn)",
+          "40 g gehackte Nüsse",
+          "2–3 EL Honig",
+          "1 TL gemahlener Zimt",
+          "Prise Vanille",
+          "10 g Butter"
+        ],
+        "steps": [
+          "Äpfel entkernen, ohne ganz durchzustechen.",
+          "Mit Nüssen + Honig + Zimt + Vanille füllen.",
+          "Jeweils ein kleines Stück Butter daraufsetzen; bei 180°C 25–35 Min. backen, bis weich und glänzend."
+        ]
+      },
+      "cookies-ciocolata-scortisoara": {
+        "title": "Schoko-Zimt-Cookies",
+        "excerpt": "Weiche Cookies mit Schokostückchen und warmen Zimtnoten. Schnell gemacht, noch schneller vernascht!",
+        "prep": "15 Min.",
+        "cook": "10–12 Min.",
+        "servings": "ca. 20 Stück",
+        "ingredients": [
+          "120 g weiche Butter",
+          "120 g Zucker + 80 g brauner Zucker",
+          "1 großes Ei",
+          "220 g Mehl",
+          "1 TL Backpulver",
+          "1 TL gemahlener Zimt",
+          "Prise Salz",
+          "150 g Schokodrops"
+        ],
+        "steps": [
+          "Butter mit beiden Zuckersorten cremig schlagen; Ei unterrühren.",
+          "Trockene Zutaten zugeben, dann Schokodrops unterheben.",
+          "Teigkugeln formen, aufs Blech setzen, bei 180°C 10–12 Min. backen. Auf einem Gitter abkühlen lassen."
+        ]
+      },
+      "curry-dovleac-scortisoara": {
+        "title": "Kürbis-Curry mit Zimt",
+        "excerpt": "Cremiger Kürbis, Kokosmilch und eine sanfte Gewürzmischung, in der Zimt dezent hervortritt.",
+        "prep": "10 Min.",
+        "cook": "20 Min.",
+        "servings": "4 Portionen",
+        "ingredients": [
+          "600 g Kürbis, gewürfelt",
+          "1 kleine Zwiebel, gehackt",
+          "2 Knoblauchzehen",
+          "1 TL Currypaste oder -pulver",
+          "½ TL gemahlener Zimt",
+          "250 ml Kokosmilch",
+          "250 ml Gemüsebrühe",
+          "2 EL Öl",
+          "Salz, Pfeffer; frischer Koriander zum Servieren"
+        ],
+        "steps": [
+          "Zwiebel 2–3 Min. in Öl anschwitzen; Knoblauch, Curry und Zimt 30 Sek. mitrösten.",
+          "Kürbis, Brühe und Kokosmilch zugeben; 15–20 Min. sanft köcheln, bis weich.",
+          "Mit Salz/Pfeffer abschmecken; mit Reis und Koriander servieren."
+        ]
+      }
+    }
+  },
+
+  "typesPage": {
+    "labels": {
+      "badge": "SORTE",
+      "details": "DETAILS & VERWENDUNG",
+      "back": "Zurück",
+      "sectionOrigin": "Herkunft & Sensorik",
+      "origin": "Herkunft",
+      "intensity": "Intensität",
+      "color": "Farbe",
+      "texture": "Textur",
+      "aromaNotes": "Aromennoten",
+      "bestUses": "Beste Verwendung",
+      "disclaimer": "Hinweis: Angaben dienen kulinarischen/Informationszwecken."
+    },
+    "items": {
+      "ceylon": {
+        "title": "Ceylon („echter Zimt“)",
+        "excerpt": "Zart, floral, zitrisch. Dünne, vielschichtige Röllchen. Bevorzugt für feine Desserts.",
+        "origin": "Sri Lanka",
+        "intensity": "zart",
+        "color": "hellbraun, golden",
+        "texture": "dünne, brüchige Stangen; feines Pulver",
+        "aromaNotes": ["floral", "Honig", "leicht zitrisch", "warm, mild süß"],
+        "bestUses": [
+          "Cremes & Frostings",
+          "gebackenes Obst",
+          "sanfter Kaffee/Latte",
+          "leichte Granola",
+          "Äpfel, Birnen"
+        ]
+      },
+      "cassia-china": {
+        "title": "Cassia (China)",
+        "excerpt": "Kräftig, süß-würzig. Dicke Stangen mit einfacher Spiralwicklung. Sehr beliebt beim Backen.",
+        "origin": "China",
+        "intensity": "kräftig",
+        "color": "rötlichbraun",
+        "texture": "dicke, harte Stangen; leicht grobes Pulver",
+        "aromaNotes": [
+          "süß-würzig",
+          "holzig",
+          "warm",
+          "leicht bitter im Abgang"
+        ],
+        "bestUses": [
+          "Zimtschnecken",
+          "Kekse & Muffins",
+          "Gewürz für Glühwein",
+          "Fleischrub"
+        ]
+      },
+      "saigon": {
+        "title": "Saigon (Vietnamesisch)",
+        "excerpt": "Sehr duftintensiv mit pikantem Akzent. Hebt Desserts sofort geschmacklich an.",
+        "origin": "Vietnam",
+        "intensity": "kräftig",
+        "color": "dunkelbraun",
+        "texture": "dicke Stangen; sehr aromatisches Pulver",
+        "aromaNotes": ["pikant", "Hauch Kampfer", "süß-bitter", "holzig"],
+        "bestUses": [
+          "Brownies & Schokolade",
+          "intensive Granola",
+          "Wintergewürze",
+          "kräftige Currys"
+        ]
+      },
+      "korintje": {
+        "title": "Korintje (Indonesisch)",
+        "excerpt": "Ausgewogen, verlässlich, weit verbreitet in der gewerblichen Bäckerei.",
+        "origin": "Indonesien",
+        "intensity": "mittel",
+        "color": "mittelbraun",
+        "texture": "feste Stangen; gleichmäßiges Pulver",
+        "aromaNotes": ["warm süß", "holzig", "leicht pfeffrig"],
+        "bestUses": [
+          "Hefeteige",
+          "Crumble & Pies",
+          "BBQ-Saucen",
+          "Apfel/Kürbis-Gewürz"
+        ]
+      },
+      "madagascar": {
+        "title": "Madagaskar",
+        "excerpt": "Komplexes Aromaprofil mit Vanillenoten – exzellent für Cremes und Crème brûlée.",
+        "origin": "Madagaskar",
+        "intensity": "mittel",
+        "color": "goldbraun",
+        "texture": "dünne bis mittlere Stangen; feines Pulver",
+        "aromaNotes": ["vanillig", "floral", "leichte Honignote", "warm"],
+        "bestUses": [
+          "Cremes & Feingebäck",
+          "Joghurts & Parfaits",
+          "Milch-/Tee-Infusionen"
+        ]
+      }
+    }
+  }
+}

@@ -2,102 +2,80 @@
   class="back-btn"
   type="button"
   (click)="onBack()"
-  aria-label="Înapoi la acasă"
+  [attr.aria-label]="(labels$ | async)?.back"
 >
-  <svg
-    class="back-btn__icon"
-    viewBox="0 0 24 24"
-    width="20"
-    height="20"
-    aria-hidden="true"
-  >
-    <path
-      fill="currentColor"
-      d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"
-    />
+  <svg class="back-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
   </svg>
-  <span class="back-btn__label">Înapoi</span>
+  <span class="back-btn__label">{{ (labels$ | async)?.back }}</span>
 </button>
 
-<section
-  class="tipuri__section"
-  *ngFor="let t of types; let i = index"
-  [class.crem]="i % 2 === 1"
-  [attr.id]="t.slug"
->
-  <div class="tipuri__inner">
-    <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
-      <div class="feature-card__media">
-        <img [src]="t.img" [alt]="t.title" />
-        <span class="feature-card__badge">TIP</span>
-      </div>
-
-      <div class="feature-card__content">
-        <h2 class="feature-card__title">{{ t.title }}</h2>
-        <p class="feature-card__text">{{ t.excerpt }}</p>
-
-        <button
-          class="btn btn--outline"
-          type="button"
-          (click)="openModal(t.slug)"
-        >
-          DETALII & UTILIZĂRI <span aria-hidden="true">→</span>
-        </button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<div class="modal" *ngIf="modalOpen && active" (keydown)="onKeydown($event)">
-  <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
-
-  <div
-    class="modal__dialog"
-    role="dialog"
-    aria-modal="true"
-    [attr.aria-label]="active.title"
+<ng-container *ngIf="(types$ | async) as types; else loading">
+  <section
+    class="tipuri__section"
+    *ngFor="let t of types; let i = index"
+    [class.crem]="i % 2 === 1"
+    [attr.id]="t.slug"
   >
-    <header class="modal__header">
-      <h3 class="modal__title">{{ active.title }}</h3>
-      <button
-        #modalCloseBtn
-        class="modal__close"
-        type="button"
-        (click)="closeModal()"
-        aria-label="Închide"
-      >
-        ✕
-      </button>
-    </header>
+    <div class="tipuri__inner">
+      <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
+        <div class="feature-card__media">
+          <img [src]="t.img" [alt]="t.title" />
+          <span class="feature-card__badge">{{ (labels$ | async)?.badge }}</span>
+        </div>
 
-    <div class="modal__grid">
-      <aside class="modal__aside">
-        <img [src]="active.img" [alt]="active.title" />
-      </aside>
+        <div class="feature-card__content">
+          <h2 class="feature-card__title">{{ t.title }}</h2>
+          <p class="feature-card__text">{{ t.excerpt }}</p>
 
-      <section class="modal__content">
-        <h4>Origine & Profil senzorial</h4>
-        <ul class="modal__facts">
-          <li><strong>Origine:</strong> {{ active.origin }}</li>
-          <li><strong>Intensitate:</strong> {{ active.intensity }}</li>
-          <li><strong>Culoare:</strong> {{ active.color }}</li>
-          <li><strong>Textură:</strong> {{ active.texture }}</li>
-        </ul>
+          <button class="btn btn--outline" type="button" (click)="openModal(t.slug, types)">
+            {{ (labels$ | async)?.details }} <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        <h4>Note aromatice</h4>
-        <ul class="modal__list">
-          <li *ngFor="let n of active.aromaNotes">{{ n }}</li>
-        </ul>
+  <div class="modal" *ngIf="modalOpen && active" (keydown)="onKeydown($event)">
+    <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
 
-        <h4>Utilizări recomandate</h4>
-        <ul class="modal__list">
-          <li *ngFor="let u of active.bestUses">{{ u }}</li>
-        </ul>
+    <div class="modal__dialog" role="dialog" aria-modal="true" [attr.aria-label]="active.title">
+      <header class="modal__header">
+        <h3 class="modal__title">{{ active.title }}</h3>
+        <button #modalCloseBtn class="modal__close" type="button" (click)="closeModal()" [attr.aria-label]="(labels$ | async)?.back">✕</button>
+      </header>
 
-        <p class="modal__disclaimer">
-          <em>Notă: Informațiile sunt cu scop culinar-informativ.</em>
-        </p>
-      </section>
+      <div class="modal__grid">
+        <aside class="modal__aside">
+          <img [src]="active.img" [alt]="active.title" />
+        </aside>
+
+        <section class="modal__content">
+          <h4>{{ (labels$ | async)?.sectionOrigin }}</h4>
+          <ul class="modal__facts">
+            <li><strong>{{ (labels$ | async)?.origin }}:</strong> {{ active.origin }}</li>
+            <li><strong>{{ (labels$ | async)?.intensity }}:</strong> {{ active.intensity }}</li>
+            <li><strong>{{ (labels$ | async)?.color }}:</strong> {{ active.color }}</li>
+            <li><strong>{{ (labels$ | async)?.texture }}:</strong> {{ active.texture }}</li>
+          </ul>
+
+          <h4>{{ (labels$ | async)?.aromaNotes }}</h4>
+          <ul class="modal__list">
+            <li *ngFor="let n of active.aromaNotes">{{ n }}</li>
+          </ul>
+
+          <h4>{{ (labels$ | async)?.bestUses }}</h4>
+          <ul class="modal__list">
+            <li *ngFor="let u of active.bestUses">{{ u }}</li>
+          </ul>
+
+          <p class="modal__disclaimer"><em>{{ (labels$ | async)?.disclaimer }}</em></p>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #loading>
+  <p style="padding:1rem;opacity:.7">…</p>
+</ng-template>
