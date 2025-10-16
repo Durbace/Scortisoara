@@ -3,11 +3,12 @@ import { Router, RouterModule } from '@angular/router';
 
 import { LanguageService } from '../../language.service';
 import { TranslocoModule } from '@jsverse/transloco';
+import { CvComponent } from '../cv/cv.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [RouterModule, TranslocoModule],
+  imports: [RouterModule, TranslocoModule, CvComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
@@ -62,54 +63,8 @@ export class HomepageComponent implements OnInit, OnDestroy {
     window.scrollTo({ top, behavior: 'smooth' });
   }
 
-  private onWheel = (e: WheelEvent) => {
-    if (this.locked || !this.inHero()) return;
-    if (e.deltaY > 0 && this.nextSection) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => (this.locked = false), 700);
-    }
-  };
-
-  private onTouchStart = (e: TouchEvent) => {
-    if (e.touches && e.touches.length) {
-      this.startY = e.touches[0].clientY;
-    }
-  };
-
-  private onTouchMove = (e: TouchEvent) => {
-    if (
-      this.startY === null ||
-      this.locked ||
-      !this.inHero() ||
-      !this.nextSection
-    )
-      return;
-    const delta = e.touches[0].clientY - this.startY;
-    if (delta < -8) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => {
-        this.locked = false;
-        this.startY = null;
-      }, 700);
-    }
-  };
-
   private onTouchEnd = (_e: TouchEvent) => {
     this.startY = null;
-  };
-
-  private onKey = (e: KeyboardEvent) => {
-    if (this.locked || !this.inHero() || !this.nextSection) return;
-    if ([' ', 'PageDown', 'ArrowDown'].includes(e.key)) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => (this.locked = false), 700);
-    }
   };
 
   ngOnInit() {
@@ -138,4 +93,52 @@ export class HomepageComponent implements OnInit, OnDestroy {
   goToType(slug: string) {
     this.router.navigate(['/tipuri'], { fragment: slug });
   }
+
+  private modalOpen(): boolean {
+  return document.body.classList.contains('modal-open');
+}
+
+private onWheel = (e: WheelEvent) => {
+  if (this.modalOpen()) return;            // <— ADĂUGAT
+  if (this.locked || !this.inHero()) return;
+  if (e.deltaY > 0 && this.nextSection) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => (this.locked = false), 700);
+  }
+};
+
+private onTouchStart = (e: TouchEvent) => {
+  if (this.modalOpen()) return;            // <— ADĂUGAT
+  if (e.touches && e.touches.length) {
+    this.startY = e.touches[0].clientY;
+  }
+};
+
+private onTouchMove = (e: TouchEvent) => {
+  if (this.modalOpen()) return;            // <— ADĂUGAT
+  if (this.startY === null || this.locked || !this.inHero() || !this.nextSection) return;
+  const delta = e.touches[0].clientY - this.startY;
+  if (delta < -8) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => {
+      this.locked = false;
+      this.startY = null;
+    }, 700);
+  }
+};
+
+private onKey = (e: KeyboardEvent) => {
+  if (this.modalOpen()) return;            // <— ADĂUGAT
+  if (this.locked || !this.inHero() || !this.nextSection) return;
+  if ([' ', 'PageDown', 'ArrowDown'].includes(e.key)) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => (this.locked = false), 700);
+  }
+};
 }

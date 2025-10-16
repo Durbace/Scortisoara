@@ -4,7 +4,7 @@
     "recipes": "RECIPES",
     "types": "ORIGINS",
     "blog": "BLOG",
-    "contact": "CONTACT",
+    "contact": "CV",
     "languages": "LANGUAGES"
   },
   "lang": { "ro": "ROMANIAN", "en": "ENGLISH", "de": "GERMAN" },
@@ -284,6 +284,122 @@
         "aromaNotes": ["vanilla-like", "floral", "light honey", "warm"],
         "bestUses": ["custards & fine pastry", "yogurts & parfaits", "milk/tea infusions"]
       }
+    }
+  },
+
+  "cv": {
+    "title": "Curriculum Vitae",
+    "header": {
+      "name": "Diana-Elena Durbacă",
+      "phone": "+40 748 636 599",
+      "emailText": "dianadurbaca2003&#64;gmail.com",
+      "emailHref": "mailto:dianadurbaca2003@gmail.com",
+      "linkedinText": "linkedin.com/durbacadiana",
+      "linkedinHref": "https://www.linkedin.com/in/diana-elena-durbac%C4%83-065473286",
+      "githubText": "github.com/durbacadiana",
+      "githubHref": "https://github.com/Durbace?tab=repositories"
+    },
+    "sections": {
+      "education": {
+        "title": "Education",
+        "items": [
+          {
+            "period": "Oct 2025 – Present",
+            "degree": "Master's in Internet Technologies (English-taught)",
+            "institution": "Transilvania University",
+            "location": "Brașov, Romania"
+          },
+          {
+            "period": "Oct 2022 – Jun 2025",
+            "degree": "Bachelor of Science in Computer Science",
+            "institution": "Transilvania University",
+            "location": "Brașov, Romania"
+          }
+        ],
+        "coursework": "Relevant coursework: Data Structures, Algorithms, Formal Languages and Compilers, Object-Oriented Programming (C++), Advanced Programming (Java), Artificial Intelligence (Python)."
+      },
+      "experience": {
+        "title": "Experience",
+        "items": [
+          {
+            "period": "Aug 2024 – Sep 2025",
+            "role": "Working Student (Frontend)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, Romania",
+            "bullets": [
+              "Built modular, reusable, reactive components in Angular.",
+              "Developed responsive and accessible UIs with Angular Material, PrimeNG, and CSS.",
+              "Integrated APIs with HttpClient and RxJS; handled async data and errors.",
+              "Applied best practices: lazy loading, feature modules, standalone components."
+            ]
+          },
+          {
+            "period": "Nov 2023 – Aug 2024",
+            "role": "Working Student (DevOps)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, Romania",
+            "bullets": [
+              "Containerized apps with Docker and orchestrated with Kubernetes.",
+              "Implemented CI/CD with GitHub Actions and ArgoCD.",
+              "Monitored apps with Grafana and optimized performance.",
+              "Worked with AWS, Azure, and VirtualBox environments."
+            ]
+          }
+        ]
+      },
+      "projects": {
+        "title": "Projects",
+        "items": [
+          {
+            "title": "Interactive 3D CV",
+            "link": "https://durbace.github.io/cv-spatial",
+            "stack": "Angular, Three.js, WebGL",
+            "desc": "Interactive online résumé as a 3D solar system with animations, hotspots, and a modern UI overlay."
+          },
+          {
+            "title": "Liceu-Bac Performance Analyzer",
+            "link": "https://github.com/Durbace/Liceu-Bac-PrimeNG_App",
+            "stack": "Angular, PrimeNG, Tailwind",
+            "desc": "Exam performance analytics, school recommendations, and admission trends."
+          },
+          {
+            "title": "Weather App",
+            "link": "https://github.com/Durbace/Weather-App",
+            "stack": "Angular, TypeScript",
+            "desc": "Open-Meteo integration, autocomplete search, and Firebase favorites."
+          },
+          {
+            "title": "Expense Tracker (Mobile)",
+            "link": "https://github.com/Durbace/Expense-Tracker-Mobile-App",
+            "stack": "Flutter, Dart, MongoDB",
+            "desc": "JWT auth, AI financial tips, receipt OCR, and PDF/Excel export."
+          },
+          {
+            "title": "Expense Tracker (Web)",
+            "link": "https://github.com/Durbace/Expense-Tracker",
+            "stack": "Angular, Node.js, MongoDB",
+            "desc": "Dashboards, categories, exports, and AI-assisted advice."
+          },
+          {
+            "title": "Python Echo Server & Client",
+            "link": "https://github.com/Durbace/PythonEchoNet",
+            "stack": "Python, asyncio, Docker",
+            "desc": "Asynchronous networking with CI/CD."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills & Interests",
+        "programming": "Programming: C, C++, C#, Java, Python, JavaScript, Dart, HTML/CSS",
+        "frameworks": "Frameworks & Tools: Angular, Node.js, Express, Flutter, Three.js, PrimeNG, Tailwind, Font Awesome",
+        "soft": "Soft skills: communication, teamwork, adaptability, attention to detail, logical thinking",
+        "languages": "Languages: Romanian (native), English",
+        "interests": "Interests: playing guitar, photography, gaming, cooking"
+      }
+    },
+    "actions": {
+      "downloadPdf": "Download PDF",
+      "close": "Close"
     }
   }
 }

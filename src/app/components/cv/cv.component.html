@@ -1,0 +1,127 @@
+<div
+  class="cv-backdrop"
+  [class.open]="open"
+  (mousedown)="onBackdrop($event)"
+  (window:keydown)="onKey($event)"
+  [attr.aria-hidden]="open ? 'false' : 'true'"
+  (wheel)="$event.stopPropagation()"
+  (touchmove)="$event.stopPropagation()"
+>
+  <div
+    class="cv-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cvTitle"
+    tabindex="-1"
+    (wheel)="$event.stopPropagation()"
+    (touchmove)="$event.stopPropagation()"
+  >
+    <header class="cv-modal__header">
+      <h2 class="cv-modal__title" id="cvTitle">{{ "cv.title" | transloco }}</h2>
+      <button
+        class="cv-modal__close"
+        type="button"
+        (click)="closeModal()"
+        [attr.aria-label]="'cv.actions.close' | transloco"
+      >
+        ×
+      </button>
+    </header>
+
+    <!-- folosim obiectul cv încărcat din i18n -->
+    <div
+      class="cv-modal__content"
+      *ngIf="cv as cvd"
+      (wheel)="$event.stopPropagation()"
+      (touchmove)="$event.stopPropagation()"
+    >
+      <!-- HEADER -->
+      <section class="cv">
+        <header class="cv__header">
+          <h1>{{ cvd.header.name }}</h1>
+          <p>
+            <a [href]="'tel:' + cvd.header.phone">{{ cvd.header.phone }}</a>
+            ·
+            <a [attr.href]="cvd.header.emailHref">{{ cvd.header.emailText }}</a>
+            ·
+            <a
+              [href]="cvd.header.linkedinHref"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ cvd.header.linkedinText }}
+            </a>
+            ·
+            <a
+              [href]="cvd.header.githubHref"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ cvd.header.githubText }}
+            </a>
+          </p>
+        </header>
+
+        <!-- EDUCATION -->
+        <article class="cv__block">
+          <h2>{{ cvd.sections.education.title }}</h2>
+
+          <ng-container *ngFor="let ed of cvd.sections.education.items">
+            <p>
+              <strong>{{ ed.degree }}</strong>
+              — {{ ed.institution }}, {{ ed.location }} ({{ ed.period }})
+            </p>
+          </ng-container>
+
+          <p class="meta">{{ cvd.sections.education.coursework }}</p>
+        </article>
+
+        <!-- EXPERIENCE -->
+        <article class="cv__block">
+          <h2>{{ cvd.sections.experience.title }}</h2>
+
+          <ng-container *ngFor="let ex of cvd.sections.experience.items">
+            <h3>{{ ex.role }} — {{ ex.company }}</h3>
+            <p class="meta">{{ ex.period }} · {{ ex.location }}</p>
+            <ul>
+              <li *ngFor="let b of ex.bullets">{{ b }}</li>
+            </ul>
+          </ng-container>
+        </article>
+
+        <!-- PROJECTS -->
+        <article class="cv__block">
+          <h2>{{ cvd.sections.projects.title }}</h2>
+
+          <ul>
+            <li *ngFor="let p of cvd.sections.projects.items">
+              <a [href]="p.link" target="_blank" rel="noopener noreferrer">{{
+                p.title
+              }}</a>
+              — {{ p.stack }}. {{ p.desc }}
+            </li>
+          </ul>
+        </article>
+
+        <!-- SKILLS -->
+        <article class="cv__block">
+          <h2>{{ cvd.sections.skills.title }}</h2>
+          <p>{{ cvd.sections.skills.programming }}</p>
+          <p>{{ cvd.sections.skills.frameworks }}</p>
+          <p>{{ cvd.sections.skills.soft }}</p>
+          <p>{{ cvd.sections.skills.languages }}</p>
+          <p>{{ cvd.sections.skills.interests }}</p>
+        </article>
+      </section>
+    </div>
+
+    <footer class="cv-modal__footer">
+      <a class="btn" href="assets/cv/cv.pdf" download>
+        {{ "cv.actions.downloadPdf" | transloco }}
+      </a>
+      <button class="btn btn--ghost" type="button" (click)="closeModal()">
+        {{ "cv.actions.close" | transloco }}
+      </button>
+    </footer>
+  </div>
+</div>

@@ -59,8 +59,10 @@
   </nav>
 
   <nav class="hero__menu hero__menu--right">
+    <a href="#" (click)="cv.openModal(); $event.preventDefault()">
+      {{ "nav.contact" | transloco }}
+    </a>
     <a href="#">{{ "nav.blog" | transloco }}</a>
-    <a href="#contact">{{ "nav.contact" | transloco }}</a>
 
     <div
       class="dropdown"
@@ -240,3 +242,5 @@
     </p>
   </div>
 </section>
+
+<app-cv #cv></app-cv>

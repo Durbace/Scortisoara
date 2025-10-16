@@ -4,7 +4,7 @@
     "recipes": "REȚETE",
     "types": "ORIGINI",
     "blog": "BLOG",
-    "contact": "CONTACT",
+    "contact": "CV",
     "languages": "LIMBI"
   },
   "lang": { "ro": "ROMÂNĂ", "en": "ENGLEZĂ", "de": "GERMANĂ" },
@@ -219,6 +219,122 @@
         "aromaNotes": ["vanilat", "floral", "ușor miere", "cald"],
         "bestUses": ["creme & patiserie fină", "iaurturi & parfait", "infuzie în lapte, ceaiuri"]
       }
+    }
+  },
+
+   "cv": {
+    "title": "Curriculum Vitae",
+    "header": {
+      "name": "Diana-Elena Durbacă",
+      "phone": "0748636599",
+      "emailText": "dianadurbaca2003&#64;gmail.com",
+      "emailHref": "mailto:dianadurbaca2003@gmail.com",
+      "linkedinText": "linkedin.com/durbacadiana",
+      "linkedinHref": "https://www.linkedin.com/in/diana-elena-durbac%C4%83-065473286",
+      "githubText": "github.com/durbacadiana",
+      "githubHref": "https://github.com/Durbace?tab=repositories"
+    },
+    "sections": {
+      "education": {
+        "title": "Educație",
+        "items": [
+          {
+            "period": "Oct 2025 – Prezent",
+            "degree": "Master Tehnologii Internet (program în limba engleză)",
+            "institution": "Universitatea Transilvania",
+            "location": "Brașov, România"
+          },
+          {
+            "period": "Oct 2022 – Iun 2025",
+            "degree": "Licență în Informatică",
+            "institution": "Universitatea Transilvania",
+            "location": "Brașov, România"
+          }
+        ],
+        "coursework": "Cursuri relevante: Structuri de Date, Algoritmi, Limbaje Formale și Compilatoare, Programare Orientată Obiect (C++), Programare Avansată (Java), Inteligență Artificială (Python)."
+      },
+      "experience": {
+        "title": "Experiență",
+        "items": [
+          {
+            "period": "Aug 2024 – Sep 2025",
+            "role": "Working Student (Frontend)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, România",
+            "bullets": [
+              "Am construit componente modulare, reutilizabile și reactive în Angular.",
+              "Interfețe responsive și accesibile cu Angular Material, PrimeNG și CSS.",
+              "Integrare API cu HttpClient și RxJS; gestionarea datelor asincrone și a erorilor.",
+              "Bune practici: lazy loading, feature modules, standalone components."
+            ]
+          },
+          {
+            "period": "Nov 2023 – Aug 2024",
+            "role": "Working Student (DevOps)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, România",
+            "bullets": [
+              "Containerizare cu Docker și orchestrare cu Kubernetes.",
+              "CI/CD cu GitHub Actions și ArgoCD.",
+              "Monitorizare cu Grafana și optimizări de performanță.",
+              "Lucru cu AWS, Azure și medii VirtualBox."
+            ]
+          }
+        ]
+      },
+      "projects": {
+        "title": "Proiecte",
+        "items": [
+          {
+            "title": "Interactive 3D CV",
+            "link": "https://durbace.github.io/cv-spatial",
+            "stack": "Angular, Three.js, WebGL",
+            "desc": "CV online interactiv ca sistem solar 3D, cu animații, hotspot-uri și UI modern."
+          },
+          {
+            "title": "Liceu-Bac Performance Analyzer",
+            "link": "https://github.com/Durbace/Liceu-Bac-PrimeNG_App",
+            "stack": "Angular, PrimeNG, Tailwind",
+            "desc": "Analytics pentru rezultate la examene, recomandări de licee și trenduri de admitere."
+          },
+          {
+            "title": "Weather App",
+            "link": "https://github.com/Durbace/Weather-App",
+            "stack": "Angular, TypeScript",
+            "desc": "Integrare Open-Meteo, căutare cu autocomplete, favorite în Firebase."
+          },
+          {
+            "title": "Expense Tracker (Mobile)",
+            "link": "https://github.com/Durbace/Expense-Tracker-Mobile-App",
+            "stack": "Flutter, Dart, MongoDB",
+            "desc": "Autentificare JWT, sfaturi financiare AI, OCR bonuri, export PDF/Excel."
+          },
+          {
+            "title": "Expense Tracker (Web)",
+            "link": "https://github.com/Durbace/Expense-Tracker",
+            "stack": "Angular, Node.js, MongoDB",
+            "desc": "Dashboard-uri, categorii, exporturi și recomandări asistate AI."
+          },
+          {
+            "title": "Python Echo Server & Client",
+            "link": "https://github.com/Durbace/PythonEchoNet",
+            "stack": "Python, asyncio, Docker",
+            "desc": "Rețelistică asincronă cu pipeline de CI/CD."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Competențe & Interese",
+        "programming": "Programare: C, C++, C#, Java, Python, JavaScript, Dart, HTML/CSS",
+        "frameworks": "Framework-uri & unelte: Angular, Node.js, Express, Flutter, Three.js, PrimeNG, Tailwind, Font Awesome",
+        "soft": "Soft skills: comunicare, lucru în echipă, adaptabilitate, atenție la detalii, gândire logică",
+        "languages": "Limbi: română (nativ), engleză",
+        "interests": "Interese: chitară, fotografie, gaming, gătit"
+      }
+    },
+    "actions": {
+      "downloadPdf": "Descarcă PDF",
+      "close": "Închide"
     }
   }
 }
