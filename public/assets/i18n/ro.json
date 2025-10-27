@@ -38,8 +38,14 @@
   },
 
   "badge": { "recipes": "REȚETE", "types": "TIPURI & ORIGINI" },
-  "imgAlt": { "recipes": "Rețete cu scorțișoară", "types": "Tipuri de scorțișoară și origini" },
-  "cta": { "seeRecipes": "VEZI REȚETELE", "discoverTypes": "DESCOPERĂ TIPURILE" },
+  "imgAlt": {
+    "recipes": "Rețete cu scorțișoară",
+    "types": "Tipuri de scorțișoară și origini"
+  },
+  "cta": {
+    "seeRecipes": "VEZI REȚETELE",
+    "discoverTypes": "DESCOPERĂ TIPURILE"
+  },
   "note": "Notă: informațiile au scop culinar-informativ.",
 
   "guide": {
@@ -150,6 +156,71 @@
           "Încălzește laptele și spumează-l.",
           "Toarnă laptele peste espresso. Presară scorțișoară deasupra. Servește imediat."
         ]
+      },
+      "mere-coapte-cu-scortisoara": {
+        "title": "Mere coapte cu scorțișoară & miere",
+        "excerpt": "Mere coapte încet, umplute cu nuci și miere – ridicate de aroma caldă a scorțișoarei.",
+        "prep": "10 min",
+        "cook": "25–35 min",
+        "servings": "4 porții",
+        "ingredients": [
+          "4 mere tari (ex. Jonatan/Braeburn)",
+          "40 g nuci tocate",
+          "2–3 linguri miere",
+          "1 linguriță scorțișoară pudră",
+          "Un praf de vanilie",
+          "10 g unt"
+        ],
+        "steps": [
+          "Scobește merele fără să le străpungi până jos.",
+          "Umple cu nuci + miere + scorțișoară + vanilie.",
+          "Pune câte un cub mic de unt deasupra; coace la 180°C 25–35 min, până devin fragede și lucioase."
+        ]
+      },
+      "cookies-ciocolata-scortisoara": {
+        "title": "Cookies cu ciocolată & scorțișoară",
+        "excerpt": "Cookies moi cu fulgi de ciocolată și note calde de scorțișoară. Se fac repede, dispar și mai repede!",
+        "prep": "15 min",
+        "cook": "10–12 min",
+        "servings": "aprox. 20 bucăți",
+        "ingredients": [
+          "120 g unt moale",
+          "120 g zahăr + 80 g zahăr brun",
+          "1 ou mare",
+          "220 g făină",
+          "1 linguriță praf de copt",
+          "1 linguriță scorțișoară pudră",
+          "Un praf de sare",
+          "150 g fulgi/butoane de ciocolată"
+        ],
+        "steps": [
+          "Bate untul cu zahărul până cremos; încorporează oul.",
+          "Adaugă ingredientele uscate, apoi încorporează ciocolata.",
+          "Formează bile, așază pe tavă și coace la 180°C 10–12 min. Răcește pe grătar."
+        ]
+      },
+      "curry-dovleac-scortisoara": {
+        "title": "Curry de dovleac cu scorțișoară",
+        "excerpt": "Dovleac cremos, lapte de cocos și un mix delicat de condimente în care iese ușor în evidență scorțișoara.",
+        "prep": "10 min",
+        "cook": "20 min",
+        "servings": "4 porții",
+        "ingredients": [
+          "600 g dovleac, cuburi",
+          "1 ceapă mică, tocată",
+          "2 căței de usturoi",
+          "1 linguriță pastă/pudră de curry",
+          "½ linguriță scorțișoară pudră",
+          "250 ml lapte de cocos",
+          "250 ml supă de legume",
+          "2 linguri ulei",
+          "Sare, piper; coriandru proaspăt pentru servire"
+        ],
+        "steps": [
+          "Călește ceapa 2–3 min în ulei; adaugă usturoiul, curry-ul și scorțișoara 30 sec.",
+          "Pune dovleacul, supa și laptele de cocos; fierbe molcom 15–20 min până se înmoaie.",
+          "Potrivește de sare/piper; servește cu orez și coriandru."
+        ]
       }
     }
   },
@@ -177,7 +248,13 @@
         "color": "maro deschis, auriu",
         "texture": "bețe subțiri, friabile; pudră fină",
         "aromaNotes": ["floral", "miere", "citric ușor", "cald, dulceag"],
-        "bestUses": ["creme & glazuri", "fructe coapte", "cafea/latte fin", "granola light", "mere, pere"]
+        "bestUses": [
+          "creme & glazuri",
+          "fructe coapte",
+          "cafea/latte fin",
+          "granola light",
+          "mere, pere"
+        ]
       },
       "cassia-china": {
         "title": "Cassia (China)",
@@ -186,8 +263,18 @@
         "intensity": "puternică",
         "color": "maro-roșiatic",
         "texture": "bețe groase, dure; pudră ușor grunjoasă",
-        "aromaNotes": ["dulce-picant", "lemnos", "cald", "ușor amar spre final"],
-        "bestUses": ["rulouri cu scorțișoară", "cookies & brioșe", "condimente pentru vin fiert", "mixuri pentru carne"]
+        "aromaNotes": [
+          "dulce-picant",
+          "lemnos",
+          "cald",
+          "ușor amar spre final"
+        ],
+        "bestUses": [
+          "rulouri cu scorțișoară",
+          "cookies & brioșe",
+          "condimente pentru vin fiert",
+          "mixuri pentru carne"
+        ]
       },
       "saigon": {
         "title": "Saigon (Vietnameză)",
@@ -197,7 +284,12 @@
         "color": "maro închis",
         "texture": "bețe groase; pudră aromată intens",
         "aromaNotes": ["picant", "camforic subtil", "dulce-amărui", "lemnos"],
-        "bestUses": ["brownies & ciocolată", "granola intensă", "mixuri pentru iarnă", "curry-uri robuste"]
+        "bestUses": [
+          "brownies & ciocolată",
+          "granola intensă",
+          "mixuri pentru iarnă",
+          "curry-uri robuste"
+        ]
       },
       "korintje": {
         "title": "Korintje (Indoneziană)",
@@ -207,7 +299,12 @@
         "color": "maro mediu",
         "texture": "bețe ferme; pudră uniformă",
         "aromaNotes": ["dulce cald", "lemnos", "ușor piperat"],
-        "bestUses": ["aluaturi dospite", "crumble & plăcinte", "sosuri BBQ", "condimente pentru mere/dovleac"]
+        "bestUses": [
+          "aluaturi dospite",
+          "crumble & plăcinte",
+          "sosuri BBQ",
+          "condimente pentru mere/dovleac"
+        ]
       },
       "madagascar": {
         "title": "Madagascar",
@@ -217,12 +314,16 @@
         "color": "maro-auriu",
         "texture": "bețe subțiri-medii; pudră fină",
         "aromaNotes": ["vanilat", "floral", "ușor miere", "cald"],
-        "bestUses": ["creme & patiserie fină", "iaurturi & parfait", "infuzie în lapte, ceaiuri"]
+        "bestUses": [
+          "creme & patiserie fină",
+          "iaurturi & parfait",
+          "infuzie în lapte, ceaiuri"
+        ]
       }
     }
   },
 
-   "cv": {
+  "cv": {
     "title": "Curriculum Vitae",
     "header": {
       "name": "Diana-Elena Durbacă",

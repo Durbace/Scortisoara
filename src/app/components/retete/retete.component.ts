@@ -108,4 +108,12 @@ export class ReteteComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     document.body.style.overflow = '';
   }
+
+  selectRecipe(r: RecipeVM) {
+  this.activeRecipe = r;
+}
+
+clearRecipe() {
+  this.activeRecipe = null;
+}
 }

@@ -1,169 +1,181 @@
-<div
-  class="cv-backdrop"
-  [class.open]="open"
-  (mousedown)="onBackdrop($event)"
-  (window:keydown)="onKey($event)"
-  [attr.aria-hidden]="open ? 'false' : 'true'"
-  (wheel)="$event.stopPropagation()"
-  (touchmove)="$event.stopPropagation()"
->
-  <div
-    class="cv-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="cvTitle"
-    tabindex="-1"
-    (wheel)="$event.stopPropagation()"
-    (touchmove)="$event.stopPropagation()"
-  >
-    <header class="cv-modal__header maro">
-      <h2 class="cv-modal__title" id="cvTitle">{{ "cv.title" | transloco }}</h2>
-      <button
-        class="cv-modal__close"
-        type="button"
-        (click)="closeModal()"
-        [attr.aria-label]="'cv.actions.close' | transloco"
-      >
-        ×
-      </button>
-    </header>
+<div class="modal fade" tabindex="-1" aria-hidden="true" #cvModal>
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content shadow-lg rounded-4 overflow-hidden">
+      <div class="modal-header bg-maro text-light">
+        <h2 class="modal-title fs-5" id="cvTitle">
+          {{ "cv.title" | transloco }}
+        </h2>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
 
-    <div class="cv-modal__content crem" *ngIf="cv as cvd">
-      <section class="cv">
-        <header class="cv__header">
-          <div class="cv__identity">
-            <div class="cv__avatar" aria-hidden="true">DE</div>
-            <div class="cv__headline">
-              <h1 class="cv__name">{{ cvd.header.name }}</h1>
-              <p class="cv__links">
-                <a [href]="'tel:' + cvd.header.phone">{{ cvd.header.phone }}</a>
-                <span class="dot" aria-hidden="true">•</span>
-                <a [attr.href]="cvd.header.emailHref">{{
-                  cvd.header.emailText
-                }}</a>
-                <span class="dot" aria-hidden="true">•</span>
-                <a
-                  [href]="cvd.header.linkedinHref"
-                  target="_blank"
-                  rel="noopener"
-                  >{{ cvd.header.linkedinText }}</a
-                >
-                <span class="dot" aria-hidden="true">•</span>
-                <a
-                  [href]="cvd.header.githubHref"
-                  target="_blank"
-                  rel="noopener"
-                  >{{ cvd.header.githubText }}</a
-                >
-              </p>
-            </div>
-          </div>
-        </header>
-
-        <article class="cv__block">
-          <h2 class="cv__section-title">
-            <span class="pill">{{ cvd.sections.education.title }}</span>
-          </h2>
-
-          <ul class="cv-timeline">
-            <li class="cv-item" *ngFor="let ed of cvd.sections.education.items">
-              <div class="cv-item__left">
-                <div class="cv-item__period">{{ ed.period }}</div>
-              </div>
-              <div class="cv-item__body">
-                <h3 class="cv-item__title">{{ ed.degree }}</h3>
-                <p class="cv-item__meta">
-                  {{ ed.institution }} — {{ ed.location }}
+      <div class="modal-body bg-body-gradient" *ngIf="cv as cvd">
+        <section class="container" style="max-width: 920px">
+          <header class="my-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="cv__avatar">DE</div>
+              <div>
+                <h1 class="cv__name m-0">{{ cvd.header.name }}</h1>
+                <p class="cv__links mb-0">
+                  <a [href]="'tel:' + cvd.header.phone">{{
+                    cvd.header.phone
+                  }}</a>
+                  <span class="mx-2 opacity-50">•</span>
+                  <a [attr.href]="cvd.header.emailHref">{{
+                    cvd.header.emailText
+                  }}</a>
+                  <span class="mx-2 opacity-50">•</span>
+                  <a
+                    [href]="cvd.header.linkedinHref"
+                    target="_blank"
+                    rel="noopener"
+                    >{{ cvd.header.linkedinText }}</a
+                  >
+                  <span class="mx-2 opacity-50">•</span>
+                  <a
+                    [href]="cvd.header.githubHref"
+                    target="_blank"
+                    rel="noopener"
+                    >{{ cvd.header.githubText }}</a
+                  >
                 </p>
               </div>
-            </li>
-          </ul>
+            </div>
+          </header>
 
-          <p class="meta">{{ cvd.sections.education.coursework }}</p>
-        </article>
+          <article class="my-4">
+            <h2 class="h6 mb-3">
+              <span class="pill">{{ cvd.sections.education.title }}</span>
+            </h2>
 
-        <article class="cv__block">
-          <h2 class="cv__section-title">
-            <span class="pill">{{ cvd.sections.experience.title }}</span>
-          </h2>
-
-          <ul class="cv-timeline">
-            <li
-              class="cv-item"
-              *ngFor="let ex of cvd.sections.experience.items"
-            >
-              <div class="cv-item__left">
-                <div class="cv-item__period">{{ ex.period }}</div>
-                <div class="cv-item__location">{{ ex.location }}</div>
-              </div>
-              <div class="cv-item__body">
-                <h3 class="cv-item__title">
-                  {{ ex.role }}
-                  <span class="cv-item__at">— {{ ex.company }}</span>
-                </h3>
-                <ul class="cv-bullets">
-                  <li *ngFor="let b of ex.bullets">{{ b }}</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </article>
-
-        <article class="cv__block">
-          <h2 class="cv__section-title">
-            <span class="pill">{{ cvd.sections.projects.title }}</span>
-          </h2>
-
-          <ul class="cv-projects">
-            <li
-              class="cv-project"
-              *ngFor="let p of cvd.sections.projects.items"
-            >
-              <a
-                class="cv-project__title"
-                [href]="p.link"
-                target="_blank"
-                rel="noopener"
-                >{{ p.title }}</a
+            <ul class="list-unstyled border-start ps-3">
+              <li
+                class="cv-item py-2"
+                *ngFor="let ed of cvd.sections.education.items"
               >
-              <span class="cv-project__stack">{{ p.stack }}</span>
-              <p class="cv-project__desc">{{ p.desc }}</p>
-            </li>
-          </ul>
-        </article>
+                <div class="row g-3">
+                  <div
+                    class="col-12 col-md-3 text-md-end text-muted small fw-semibold"
+                  >
+                    {{ ed.period }}
+                  </div>
+                  <div class="col-12 col-md-9">
+                    <h3 class="h6 fw-bold mb-1">{{ ed.degree }}</h3>
+                    <p class="mb-0 text-muted">
+                      {{ ed.institution }} — {{ ed.location }}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
 
-        <article class="cv__block">
-          <h2 class="cv__section-title">
-            <span class="pill">{{ cvd.sections.skills.title }}</span>
-          </h2>
+            <p class="text-muted small mb-0">
+              {{ cvd.sections.education.coursework }}
+            </p>
+          </article>
 
-          <ul class="tags">
-            <li
-              *ngFor="let t of cvd.sections.skills.programming | splitByComma"
-            >
-              {{ t }}
-            </li>
-          </ul>
-          <ul class="tags">
-            <li *ngFor="let t of cvd.sections.skills.frameworks | splitByComma">
-              {{ t }}
-            </li>
-          </ul>
+          <article class="my-4">
+            <h2 class="h6 mb-3">
+              <span class="pill">{{ cvd.sections.experience.title }}</span>
+            </h2>
 
-          <p class="cv-soft">{{ cvd.sections.skills.soft }}</p>
-          <p class="cv-soft">{{ cvd.sections.skills.languages }}</p>
-          <p class="cv-soft">{{ cvd.sections.skills.interests }}</p>
-        </article>
-      </section>
+            <ul class="list-unstyled border-start ps-3">
+              <li
+                class="cv-item py-2"
+                *ngFor="let ex of cvd.sections.experience.items"
+              >
+                <div class="row g-3">
+                  <div class="col-12 col-md-3 text-md-end">
+                    <div class="small fw-semibold text-muted">
+                      {{ ex.period }}
+                    </div>
+                    <div class="small text-muted">{{ ex.location }}</div>
+                  </div>
+                  <div class="col-12 col-md-9">
+                    <h3 class="h6 fw-bold mb-2 mb-md-1">
+                      {{ ex.role }}
+                      <span class="text-maro">— {{ ex.company }}</span>
+                    </h3>
+                    <ul class="mb-0 ps-3">
+                      <li *ngFor="let b of ex.bullets">{{ b }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="my-4">
+            <h2 class="h6 mb-3">
+              <span class="pill">{{ cvd.sections.projects.title }}</span>
+            </h2>
+
+            <div class="row g-3">
+              <div class="col-12" *ngFor="let p of cvd.sections.projects.items">
+                <div class="card border-0 bg-crem-subtle">
+                  <div class="card-body">
+                    <a
+                      class="cv-project__title"
+                      [href]="p.link"
+                      target="_blank"
+                      rel="noopener"
+                      >{{ p.title }}</a
+                    >
+                    <span class="cv-project__stack">{{ p.stack }}</span>
+                    <p class="cv-project__desc mb-0 mt-2">{{ p.desc }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="my-4">
+            <h2 class="h6 mb-3">
+              <span class="pill">{{ cvd.sections.skills.title }}</span>
+            </h2>
+
+            <ul class="tags">
+              <li
+                *ngFor="let t of cvd.sections.skills.programming | splitByComma"
+              >
+                {{ t }}
+              </li>
+            </ul>
+            <ul class="tags">
+              <li
+                *ngFor="let t of cvd.sections.skills.frameworks | splitByComma"
+              >
+                {{ t }}
+              </li>
+            </ul>
+
+            <p class="cv-soft mb-1">{{ cvd.sections.skills.soft }}</p>
+            <p class="cv-soft mb-1">{{ cvd.sections.skills.languages }}</p>
+            <p class="cv-soft mb-0">{{ cvd.sections.skills.interests }}</p>
+          </article>
+        </section>
+      </div>
+
+      <div class="modal-footer bg-crem">
+        <button
+          class="btn btn-maro text-light fw-bold"
+          type="button"
+          (click)="downloadPdf()"
+        >
+          {{ "cv.actions.downloadPdf" | transloco }}
+        </button>
+        <button
+          class="btn btn-outline-maro fw-bold"
+          type="button"
+          (click)="closeModal()"
+        >
+          {{ "cv.actions.close" | transloco }}
+        </button>
+      </div>
     </div>
-
-    <footer class="cv-modal__footer crem">
-      <button class="btn btn--filled" type="button" (click)="downloadPdf()">
-        {{ "cv.actions.downloadPdf" | transloco }}
-      </button>
-      <button class="btn btn--outline" type="button" (click)="closeModal()">
-        {{ "cv.actions.close" | transloco }}
-      </button>
-    </footer>
   </div>
 </div>

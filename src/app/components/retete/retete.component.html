@@ -41,7 +41,9 @@
           <button
             class="btn btn--outline"
             type="button"
-            (click)="openModal(r.slug, recipes)"
+            (click)="selectRecipe(r)"
+            data-bs-toggle="modal"
+            data-bs-target="#recipeModal"
           >
             {{ (labels$ | async)?.seeRecipe }} <span aria-hidden="true">→</span>
           </button>
@@ -51,69 +53,77 @@
   </section>
 
   <div
-    class="modal"
-    *ngIf="modalOpen && activeRecipe"
-    (keydown)="onKeydown($event)"
+    class="modal fade"
+    id="recipeModal"
+    tabindex="-1"
+    aria-labelledby="recipeModalLabel"
+    aria-hidden="true"
+    (hidden.bs.modal)="clearRecipe()"
   >
     <div
-      class="modal__backdrop"
-      (click)="closeModal()"
-      aria-hidden="true"
-    ></div>
-
-    <div
-      class="modal__dialog"
-      role="dialog"
-      aria-modal="true"
-      [attr.aria-label]="activeRecipe!.title"
+      class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
     >
-      <header class="modal__header">
-        <h3 class="modal__title">{{ activeRecipe.title }}</h3>
-        <button
-          #modalCloseBtn
-          class="modal__close"
-          type="button"
-          (click)="closeModal()"
-          [attr.aria-label]="(labels$ | async)?.back"
-        >
-          ✕
-        </button>
-      </header>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel">
+            {{ activeRecipe?.title }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
 
-      <div
-        class="modal__meta"
-        *ngIf="activeRecipe.prep || activeRecipe.cook || activeRecipe.servings"
-      >
-        <span *ngIf="activeRecipe.prep"
-          ><strong>{{ (labels$ | async)?.prep }}:</strong>
-          {{ activeRecipe.prep }}</span
-        >
-        <span *ngIf="activeRecipe.cook"
-          ><strong>{{ (labels$ | async)?.cook }}:</strong>
-          {{ activeRecipe.cook }}</span
-        >
-        <span *ngIf="activeRecipe.servings"
-          ><strong>{{ (labels$ | async)?.servings }}:</strong>
-          {{ activeRecipe.servings }}</span
-        >
-      </div>
+        <div class="modal-body">
+          <div class="mb-3 d-flex flex-wrap gap-3" *ngIf="activeRecipe as ar">
+            <span *ngIf="ar.prep"
+              ><strong>{{ (labels$ | async)?.prep }}:</strong>
+              {{ ar.prep }}</span
+            >
+            <span *ngIf="ar.cook"
+              ><strong>{{ (labels$ | async)?.cook }}:</strong>
+              {{ ar.cook }}</span
+            >
+            <span *ngIf="ar.servings"
+              ><strong>{{ (labels$ | async)?.servings }}:</strong>
+              {{ ar.servings }}</span
+            >
+          </div>
 
-      <div class="modal__grid">
-        <aside class="modal__aside">
-          <img [src]="activeRecipe.img" [alt]="activeRecipe.title" />
-        </aside>
+          <div class="row g-4 align-items-start" *ngIf="activeRecipe as ar">
+            <div class="col-12 col-lg-5 col-xl-4">
+              <div class="img-wrap mx-auto">
+                <div class="ratio ratio-1x1">
+                  <img
+                    class="w-100 h-100 rounded-4 shadow object-fit-cover"
+                    [src]="ar.img"
+                    [alt]="ar.title"
+                  />
+                </div>
+              </div>
+            </div>
 
-        <section class="modal__content">
-          <h4>{{ (labels$ | async)?.ingredients }}</h4>
-          <ul class="modal__list">
-            <li *ngFor="let ing of activeRecipe.ingredients">{{ ing }}</li>
-          </ul>
+            <div class="col-12 col-lg-7 col-xl-8">
+              <h4 class="fw-bold mb-2">{{ (labels$ | async)?.ingredients }}</h4>
+              <ul class="modal__list">
+                <li *ngFor="let ing of ar.ingredients">{{ ing }}</li>
+              </ul>
 
-          <h4>{{ (labels$ | async)?.steps }}</h4>
-          <ol class="modal__list">
-            <li *ngFor="let step of activeRecipe.steps">{{ step }}</li>
-          </ol>
-        </section>
+              <h4 class="fw-bold mt-3 mb-2">{{ (labels$ | async)?.steps }}</h4>
+              <ol class="modal__list">
+                <li *ngFor="let step of ar.steps">{{ step }}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-maro" data-bs-dismiss="modal">
+            {{ (labels$ | async)?.back }}
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -95,56 +95,50 @@ export class HomepageComponent implements OnInit, OnDestroy {
   }
 
   private modalOpen(): boolean {
-    return document.body.classList.contains('modal-open');
+  return document.body.classList.contains('modal-open');
+}
+
+private onWheel = (e: WheelEvent) => {
+  if (this.modalOpen()) return; 
+  if (this.locked || !this.inHero()) return;
+  if (e.deltaY > 0 && this.nextSection) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => (this.locked = false), 700);
   }
+};
 
-  private onWheel = (e: WheelEvent) => {
-    if (this.modalOpen()) return;
-    if (this.locked || !this.inHero()) return;
-    if (e.deltaY > 0 && this.nextSection) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => (this.locked = false), 700);
-    }
-  };
+private onTouchStart = (e: TouchEvent) => {
+  if (this.modalOpen()) return; 
+  if (e.touches && e.touches.length) {
+    this.startY = e.touches[0].clientY;
+  }
+};
 
-  private onTouchStart = (e: TouchEvent) => {
-    if (this.modalOpen()) return;
-    if (e.touches && e.touches.length) {
-      this.startY = e.touches[0].clientY;
-    }
-  };
+private onTouchMove = (e: TouchEvent) => {
+  if (this.modalOpen()) return; 
+  if (this.startY === null || this.locked || !this.inHero() || !this.nextSection) return;
+  const delta = e.touches[0].clientY - this.startY;
+  if (delta < -8) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => {
+      this.locked = false;
+      this.startY = null;
+    }, 700);
+  }
+};
 
-  private onTouchMove = (e: TouchEvent) => {
-    if (this.modalOpen()) return;
-    if (
-      this.startY === null ||
-      this.locked ||
-      !this.inHero() ||
-      !this.nextSection
-    )
-      return;
-    const delta = e.touches[0].clientY - this.startY;
-    if (delta < -8) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => {
-        this.locked = false;
-        this.startY = null;
-      }, 700);
-    }
-  };
-
-  private onKey = (e: KeyboardEvent) => {
-    if (this.modalOpen()) return;
-    if (this.locked || !this.inHero() || !this.nextSection) return;
-    if ([' ', 'PageDown', 'ArrowDown'].includes(e.key)) {
-      e.preventDefault();
-      this.locked = true;
-      this.smoothTo(this.nextSection);
-      setTimeout(() => (this.locked = false), 700);
-    }
-  };
+private onKey = (e: KeyboardEvent) => {
+  if (this.modalOpen()) return; 
+  if (this.locked || !this.inHero() || !this.nextSection) return;
+  if ([' ', 'PageDown', 'ArrowDown'].includes(e.key)) {
+    e.preventDefault();
+    this.locked = true;
+    this.smoothTo(this.nextSection);
+    setTimeout(() => (this.locked = false), 700);
+  }
+};
 }

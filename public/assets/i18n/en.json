@@ -38,7 +38,10 @@
   },
 
   "badge": { "recipes": "RECIPES", "types": "TYPES & ORIGINS" },
-  "imgAlt": { "recipes": "Cinnamon recipes", "types": "Cinnamon types and origins" },
+  "imgAlt": {
+    "recipes": "Cinnamon recipes",
+    "types": "Cinnamon types and origins"
+  },
   "cta": { "seeRecipes": "BROWSE RECIPES", "discoverTypes": "EXPLORE TYPES" },
   "note": "Note: information is for culinary/educational purposes.",
 
@@ -72,7 +75,7 @@
     "madagascar": "Madagascar"
   },
 
-   "recipes": {
+  "recipes": {
     "labels": {
       "badge": "RECIPE",
       "seeRecipe": "SEE RECIPE",
@@ -242,7 +245,13 @@
         "color": "light brown, golden",
         "texture": "thin, brittle sticks; fine powder",
         "aromaNotes": ["floral", "honey", "light citrus", "warm, mildly sweet"],
-        "bestUses": ["creams & frostings", "baked fruit", "smooth coffee/latte", "light granola", "apples, pears"]
+        "bestUses": [
+          "creams & frostings",
+          "baked fruit",
+          "smooth coffee/latte",
+          "light granola",
+          "apples, pears"
+        ]
       },
       "cassia-china": {
         "title": "Cassia (China)",
@@ -251,8 +260,18 @@
         "intensity": "strong",
         "color": "reddish brown",
         "texture": "thick, hard sticks; slightly coarse powder",
-        "aromaNotes": ["sweet-spicy", "woody", "warm", "slightly bitter finish"],
-        "bestUses": ["cinnamon rolls", "cookies & muffins", "mulled wine spice", "meat rubs"]
+        "aromaNotes": [
+          "sweet-spicy",
+          "woody",
+          "warm",
+          "slightly bitter finish"
+        ],
+        "bestUses": [
+          "cinnamon rolls",
+          "cookies & muffins",
+          "mulled wine spice",
+          "meat rubs"
+        ]
       },
       "saigon": {
         "title": "Saigon (Vietnamese)",
@@ -262,7 +281,12 @@
         "color": "dark brown",
         "texture": "thick sticks; intensely aromatic powder",
         "aromaNotes": ["spicy", "hint of camphor", "sweet-bitter", "woody"],
-        "bestUses": ["brownies & chocolate", "intense granola", "winter spice blends", "robust curries"]
+        "bestUses": [
+          "brownies & chocolate",
+          "intense granola",
+          "winter spice blends",
+          "robust curries"
+        ]
       },
       "korintje": {
         "title": "Korintje (Indonesian)",
@@ -272,7 +296,12 @@
         "color": "medium brown",
         "texture": "firm sticks; even powder",
         "aromaNotes": ["warm sweet", "woody", "light peppery"],
-        "bestUses": ["yeasted doughs", "crumbles & pies", "BBQ sauces", "apple/pumpkin spice"]
+        "bestUses": [
+          "yeasted doughs",
+          "crumbles & pies",
+          "BBQ sauces",
+          "apple/pumpkin spice"
+        ]
       },
       "madagascar": {
         "title": "Madagascar",
@@ -282,7 +311,11 @@
         "color": "golden brown",
         "texture": "thin-to-medium sticks; fine powder",
         "aromaNotes": ["vanilla-like", "floral", "light honey", "warm"],
-        "bestUses": ["custards & fine pastry", "yogurts & parfaits", "milk/tea infusions"]
+        "bestUses": [
+          "custards & fine pastry",
+          "yogurts & parfaits",
+          "milk/tea infusions"
+        ]
       }
     }
   },

@@ -1,8 +1,10 @@
-import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
 import { SplitByCommaPipe } from '../../split-by-comma.pipe';
+// Import Modal class from bootstrap
+import Modal from 'bootstrap/js/dist/modal';
 
 @Component({
   selector: 'app-cv',
@@ -12,9 +14,11 @@ import { SplitByCommaPipe } from '../../split-by-comma.pipe';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit, OnDestroy {
-  open = false;
+  @ViewChild('cvModal', { static: true }) cvModalRef!: ElementRef<HTMLDivElement>;
+
   cv: any | null = null;
   private sub?: Subscription;
+  private modal?: Modal;
 
   constructor(
     private transloco: TranslocoService,
@@ -25,32 +29,26 @@ export class CvComponent implements OnInit, OnDestroy {
     this.sub = this.transloco.selectTranslateObject('cv').subscribe((obj) => {
       this.cv = obj;
     });
+
+    // instantiate Bootstrap modal
+    this.modal = new Modal(this.cvModalRef.nativeElement, {
+      backdrop: true,          // or 'static' if you don’t want click-to-close
+      keyboard: true,
+      focus: true
+    });
   }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();
+    // no manual cleanup needed; Bootstrap handles it
   }
 
   openModal() {
-    this.open = true;
-    this.document.body.style.overflow = 'hidden';
-    this.document.body.classList.add('modal-open');
+    this.modal?.show();
   }
 
   closeModal() {
-    this.open = false;
-    this.document.body.style.overflow = '';
-    this.document.body.classList.remove('modal-open');
-  }
-
-  onBackdrop(e: MouseEvent) {
-    if ((e.target as HTMLElement).classList.contains('cv-backdrop')) {
-      this.closeModal();
-    }
-  }
-
-  onKey(e: KeyboardEvent) {
-    if (this.open && e.key === 'Escape') this.closeModal();
+    this.modal?.hide();
   }
 
   private assetUrl(relPath: string): string {

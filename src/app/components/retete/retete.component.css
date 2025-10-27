@@ -244,134 +244,6 @@
   padding: clamp(2rem, 5vw, 3rem) 1rem;
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: grid;
-  place-items: center;
-}
-.modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
-}
-.modal__dialog {
-  position: relative;
-  width: min(1000px, 92vw);
-  max-height: min(86vh, 820px);
-  overflow: auto;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: radial-gradient(
-      900px 260px at 18% -18%,
-      rgba(234, 224, 208, 0.28),
-      transparent 60%
-    )
-    #fff;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-  color: #2c2c2c;
-  animation: modalIn 0.18s ease-out;
-}
-@keyframes modalIn {
-  from {
-    transform: translateY(6px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal__header {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.2rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.75)
-  );
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(6px);
-}
-.modal__title {
-  margin: 0;
-  font-weight: 800;
-  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-  letter-spacing: 0.01em;
-}
-.modal__close {
-  border: 1px solid rgba(70, 48, 30, 0.45);
-  background: rgba(234, 224, 208, 0.6);
-  color: #4b341f;
-  border-radius: 999px;
-  padding: 0.35rem 0.6rem;
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease,
-    border-color 0.16s ease;
-}
-.modal__close:hover {
-  transform: translateY(-1px);
-  background: rgba(234, 224, 208, 0.85);
-  border-color: rgba(70, 48, 30, 0.7);
-}
-.modal__close:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(234, 224, 208, 0.9),
-    0 0 0 6px rgba(107, 74, 46, 0.45);
-}
-
-.modal__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
-  padding: 0.6rem 1.2rem 0.2rem;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-.modal__meta strong {
-  font-weight: 800;
-}
-
-.modal__grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 1rem;
-  padding: 1rem 1.2rem 1.4rem;
-}
-@media (max-width: 900px) {
-  .modal__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.modal__aside img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-  object-fit: cover;
-  aspect-ratio: 16/11;
-  filter: saturate(1.03) contrast(1.02);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
-}
-
-.modal__content h4 {
-  margin: 0.2rem 0 0.6rem;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  color: #2b2b2b;
-}
 .modal__list {
   margin: 0 0 1rem 1.15rem;
   padding: 0;
@@ -379,4 +251,14 @@
 }
 .modal__list li + li {
   margin-top: 0.35rem;
+}
+
+#recipeModal .img-wrap {
+  max-width: 360px;
+}
+
+@media (max-width: 576px) {
+  #recipeModal .img-wrap {
+    max-width: 300px;
+  }
 }
