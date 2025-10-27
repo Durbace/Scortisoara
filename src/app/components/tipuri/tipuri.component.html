@@ -1,104 +1,81 @@
-<!-- BACK BUTTON (Bootstrap utilities) -->
 <button
+  class="back-btn"
   type="button"
-  class="btn btn-light border rounded-pill fw-bold shadow-sm position-fixed top-0 start-0 m-2 m-sm-3 d-inline-flex align-items-center gap-2"
   (click)="onBack()"
   [attr.aria-label]="(labels$ | async)?.back"
-  style="backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);"
 >
-  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-    <path fill="currentColor"
-      d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
+  <svg class="back-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
   </svg>
-  <span class="d-none d-sm-inline">{{ (labels$ | async)?.back }}</span>
+  <span class="back-btn__label">{{ (labels$ | async)?.back }}</span>
 </button>
 
-<!-- LISTA CARDURI RĂMÂNE la fel, doar butonul deschide modalul Bootstrap -->
-<section
-  class="tipuri__section"
-  *ngFor="let t of types$ | async; let i = index"
-  [class.crem]="i % 2 === 1"
-  [attr.id]="t.slug"
->
-  <div class="tipuri__inner">
-    <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
-      <div class="feature-card__media">
-        <img [src]="t.img" [alt]="t.title" />
-        <span class="feature-card__badge">{{ (labels$ | async)?.badge }}</span>
-      </div>
-
-      <div class="feature-card__content">
-        <h2 class="feature-card__title">{{ t.title }}</h2>
-        <p class="feature-card__text">{{ t.excerpt }}</p>
-
-        <button
-          type="button"
-          class="btn btn--outline"
-          (click)="openModal(t.slug)"
-          data-bs-toggle="modal"
-          data-bs-target="#typeModal"
-        >
-          {{ (labels$ | async)?.details }} <span aria-hidden="true">→</span>
-        </button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- BOOTSTRAP MODAL UNIC, REFOLOSIT -->
-<div
-  class="modal fade"
-  id="typeModal"
-  tabindex="-1"
-  aria-labelledby="typeModalLabel"
-  aria-hidden="true"
-  #typeModalEl
->
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content rounded-4 shadow-lg">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="typeModalLabel">{{ active?.title }}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"
-          [attr.aria-label]="(labels$ | async)?.back"></button>
-      </div>
-
-      <div class="modal-body">
-        <div class="d-flex flex-wrap gap-3 mb-3" *ngIf="active as ar">
-          <span><strong>{{ (labels$ | async)?.origin }}:</strong> {{ ar.origin }}</span>
-          <span><strong>{{ (labels$ | async)?.intensity }}:</strong> {{ ar.intensity }}</span>
-          <span><strong>{{ (labels$ | async)?.color }}:</strong> {{ ar.color }}</span>
-          <span><strong>{{ (labels$ | async)?.texture }}:</strong> {{ ar.texture }}</span>
+<ng-container *ngIf="(types$ | async) as types; else loading">
+  <section
+    class="tipuri__section"
+    *ngFor="let t of types; let i = index"
+    [class.crem]="i % 2 === 1"
+    [attr.id]="t.slug"
+  >
+    <div class="tipuri__inner">
+      <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
+        <div class="feature-card__media">
+          <img [src]="t.img" [alt]="t.title" />
+          <span class="feature-card__badge">{{ (labels$ | async)?.badge }}</span>
         </div>
 
-        <div class="row g-4 align-items-start" *ngIf="active as ar">
-          <!-- IMG cu rotunjire mare, crop corect -->
-          <div class="col-12 col-lg-5">
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm mx-auto" style="max-width:360px;">
-              <img class="img-fluid w-100 h-100 object-fit-cover" [src]="ar.img" [alt]="ar.title" />
-            </div>
-          </div>
+        <div class="feature-card__content">
+          <h2 class="feature-card__title">{{ t.title }}</h2>
+          <p class="feature-card__text">{{ t.excerpt }}</p>
 
-          <div class="col-12 col-lg-7">
-            <h6 class="fw-bold mb-2">{{ (labels$ | async)?.aromaNotes }}</h6>
-            <ul class="ps-4">
-              <li *ngFor="let n of ar.aromaNotes">{{ n }}</li>
-            </ul>
-
-            <h6 class="fw-bold mt-3 mb-2">{{ (labels$ | async)?.bestUses }}</h6>
-            <ul class="ps-4">
-              <li *ngFor="let u of ar.bestUses">{{ u }}</li>
-            </ul>
-
-            <p class="mt-2 mb-0"><em>{{ (labels$ | async)?.disclaimer }}</em></p>
-          </div>
+          <button class="btn btn--outline" type="button" (click)="openModal(t.slug, types)">
+            {{ (labels$ | async)?.details }} <span aria-hidden="true">→</span>
+          </button>
         </div>
-      </div>
+      </article>
+    </div>
+  </section>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">
-          {{ (labels$ | async)?.back }}
-        </button>
+  <div class="modal" *ngIf="modalOpen && active" (keydown)="onKeydown($event)">
+    <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" [attr.aria-label]="active.title">
+      <header class="modal__header">
+        <h3 class="modal__title">{{ active.title }}</h3>
+        <button #modalCloseBtn class="modal__close" type="button" (click)="closeModal()" [attr.aria-label]="(labels$ | async)?.back">✕</button>
+      </header>
+
+      <div class="modal__grid">
+        <aside class="modal__aside">
+          <img [src]="active.img" [alt]="active.title" />
+        </aside>
+
+        <section class="modal__content">
+          <h4>{{ (labels$ | async)?.sectionOrigin }}</h4>
+          <ul class="modal__facts">
+            <li><strong>{{ (labels$ | async)?.origin }}:</strong> {{ active.origin }}</li>
+            <li><strong>{{ (labels$ | async)?.intensity }}:</strong> {{ active.intensity }}</li>
+            <li><strong>{{ (labels$ | async)?.color }}:</strong> {{ active.color }}</li>
+            <li><strong>{{ (labels$ | async)?.texture }}:</strong> {{ active.texture }}</li>
+          </ul>
+
+          <h4>{{ (labels$ | async)?.aromaNotes }}</h4>
+          <ul class="modal__list">
+            <li *ngFor="let n of active.aromaNotes">{{ n }}</li>
+          </ul>
+
+          <h4>{{ (labels$ | async)?.bestUses }}</h4>
+          <ul class="modal__list">
+            <li *ngFor="let u of active.bestUses">{{ u }}</li>
+          </ul>
+
+          <p class="modal__disclaimer"><em>{{ (labels$ | async)?.disclaimer }}</em></p>
+        </section>
       </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #loading>
+  <p style="padding:1rem;opacity:.7">…</p>
+</ng-template>
