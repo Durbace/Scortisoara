@@ -4,13 +4,22 @@
   (click)="onBack()"
   [attr.aria-label]="(labels$ | async)?.back"
 >
-  <svg class="back-btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-    <path fill="currentColor" d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"/>
+  <svg
+    class="back-btn__icon"
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M15.5 19a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 1 1 1.4 1.4L10.41 11l5.79 5.3a1 1 0 0 1-.7 1.7Z"
+    />
   </svg>
   <span class="back-btn__label">{{ (labels$ | async)?.back }}</span>
 </button>
 
-<ng-container *ngIf="(types$ | async) as types; else loading">
+<ng-container *ngIf="types$ | async as types; else loading">
   <section
     class="tipuri__section"
     *ngFor="let t of types; let i = index"
@@ -21,14 +30,20 @@
       <article class="feature-card" [class.feature-card--reverse]="i % 2 === 1">
         <div class="feature-card__media">
           <img [src]="t.img" [alt]="t.title" />
-          <span class="feature-card__badge">{{ (labels$ | async)?.badge }}</span>
+          <span class="feature-card__badge">{{
+            (labels$ | async)?.badge
+          }}</span>
         </div>
 
         <div class="feature-card__content">
           <h2 class="feature-card__title">{{ t.title }}</h2>
           <p class="feature-card__text">{{ t.excerpt }}</p>
 
-          <button class="btn btn--outline" type="button" (click)="openModal(t.slug, types)">
+          <button
+            class="btn btn--outline"
+            type="button"
+            (click)="openModal(t.slug, types)"
+          >
             {{ (labels$ | async)?.details }} <span aria-hidden="true">→</span>
           </button>
         </div>
@@ -37,12 +52,29 @@
   </section>
 
   <div class="modal" *ngIf="modalOpen && active" (keydown)="onKeydown($event)">
-    <div class="modal__backdrop" (click)="closeModal()" aria-hidden="true"></div>
+    <div
+      class="modal__backdrop"
+      (click)="closeModal()"
+      aria-hidden="true"
+    ></div>
 
-    <div class="modal__dialog" role="dialog" aria-modal="true" [attr.aria-label]="active.title">
+    <div
+      class="modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="active.title"
+    >
       <header class="modal__header">
         <h3 class="modal__title">{{ active.title }}</h3>
-        <button #modalCloseBtn class="modal__close" type="button" (click)="closeModal()" [attr.aria-label]="(labels$ | async)?.back">✕</button>
+        <button
+          #modalCloseBtn
+          class="modal__close"
+          type="button"
+          (click)="closeModal()"
+          [attr.aria-label]="(labels$ | async)?.back"
+        >
+          ✕
+        </button>
       </header>
 
       <div class="modal__grid">
@@ -53,10 +85,22 @@
         <section class="modal__content">
           <h4>{{ (labels$ | async)?.sectionOrigin }}</h4>
           <ul class="modal__facts">
-            <li><strong>{{ (labels$ | async)?.origin }}:</strong> {{ active.origin }}</li>
-            <li><strong>{{ (labels$ | async)?.intensity }}:</strong> {{ active.intensity }}</li>
-            <li><strong>{{ (labels$ | async)?.color }}:</strong> {{ active.color }}</li>
-            <li><strong>{{ (labels$ | async)?.texture }}:</strong> {{ active.texture }}</li>
+            <li>
+              <strong>{{ (labels$ | async)?.origin }}:</strong>
+              {{ active.origin }}
+            </li>
+            <li>
+              <strong>{{ (labels$ | async)?.intensity }}:</strong>
+              {{ active.intensity }}
+            </li>
+            <li>
+              <strong>{{ (labels$ | async)?.color }}:</strong>
+              {{ active.color }}
+            </li>
+            <li>
+              <strong>{{ (labels$ | async)?.texture }}:</strong>
+              {{ active.texture }}
+            </li>
           </ul>
 
           <h4>{{ (labels$ | async)?.aromaNotes }}</h4>
@@ -69,7 +113,9 @@
             <li *ngFor="let u of active.bestUses">{{ u }}</li>
           </ul>
 
-          <p class="modal__disclaimer"><em>{{ (labels$ | async)?.disclaimer }}</em></p>
+          <p class="modal__disclaimer">
+            <em>{{ (labels$ | async)?.disclaimer }}</em>
+          </p>
         </section>
       </div>
     </div>
@@ -77,5 +123,5 @@
 </ng-container>
 
 <ng-template #loading>
-  <p style="padding:1rem;opacity:.7">…</p>
+  <p style="padding: 1rem; opacity: 0.7">…</p>
 </ng-template>
