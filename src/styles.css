@@ -1,11 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Cormorant+SC:wght@400;600&display=swap');
 
-body {
-  font-family: 'Lora', serif;
-  margin: 0;
-}
+body { font-family: 'Crimson Pro', serif; margin: 0; }
 
 h1, h2, h3, .brand-font {
-  font-family: 'IM Fell English SC', serif;
-  font-variant: small-caps;
+  font-family: 'Cormorant SC', serif;
 }
