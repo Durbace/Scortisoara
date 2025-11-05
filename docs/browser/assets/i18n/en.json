@@ -1,0 +1,438 @@
+{
+  "nav": {
+    "home": "HOME",
+    "recipes": "RECIPES",
+    "types": "ORIGINS",
+    "blog": "BLOG",
+    "contact": "CV",
+    "languages": "LANGUAGES"
+  },
+  "lang": { "ro": "ROMANIAN", "en": "ENGLISH", "de": "GERMAN" },
+
+  "home": {
+    "hero": {
+      "aria": "Cinnamon",
+      "line1": "Welcome to",
+      "brand": "The World of Cinnamon",
+      "line3": "– flavor, science & recipes."
+    },
+    "quickGuide": {
+      "aria": "Cinnamon Quick Guide",
+      "title": "Cinnamon Quick Guide",
+      "line1": "<strong>Ceylon vs. Cassia:</strong> Ceylon = delicate, floral notes; Cassia = bold, sweet-spicy.",
+      "line2": "<strong>Suggested dosage:</strong> ½–1 tsp/serving (depending on recipe).",
+      "line3": "<strong>Great pairings:</strong> apples, pumpkin, coffee, yogurt, oats, chocolate, lamb.",
+      "line4": "<strong>Storage:</strong> airtight jar, cool & dark; best within 6–8 months for peak aroma."
+    },
+    "sections": { "features": "Recipes & Types" },
+    "cards": {
+      "recipes": {
+        "title": "CINNAMON RECIPES",
+        "text": "From cinnamon rolls and crunchy granola to fragrant curries and cozy lattes. Filter by type and difficulty."
+      },
+      "types": {
+        "title": "TYPES & ORIGINS",
+        "text": "Differences between Ceylon and Cassia: profiles, intensity, color and best uses. Discover their origins and how to choose."
+      }
+    }
+  },
+
+  "badge": { "recipes": "RECIPES", "types": "TYPES & ORIGINS" },
+  "imgAlt": {
+    "recipes": "Cinnamon recipes",
+    "types": "Cinnamon types and origins"
+  },
+  "cta": { "seeRecipes": "BROWSE RECIPES", "discoverTypes": "EXPLORE TYPES" },
+  "note": "Note: information is for culinary/educational purposes.",
+
+  "guide": {
+    "title": "Practical Cinnamon Guide",
+    "cards": {
+      "storage": {
+        "title": "Proper storage",
+        "text": "Airtight jar, cool and dark place. For peak aroma: use within 6–8 months."
+      },
+      "dosage": {
+        "title": "Dosage & safety",
+        "text": "For home recipes: ½–1 tsp per serving. Prefer a delicate aroma? Choose Ceylon."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "q1": "Ceylon vs. Cassia – which is better for desserts?",
+        "a1": "Ceylon offers fine, floral notes; Cassia is bolder, sweet-spicy.",
+        "q2": "Sticks or ground?",
+        "a2": "Sticks for infusions/milk; ground for doughs and quick spice mixes."
+      }
+    },
+    "note": "Note: information is for culinary/educational purposes."
+  },
+
+  "types": {
+    "ceylon": "Ceylon (Sri Lanka)",
+    "cassiaChina": "Cassia (China)",
+    "saigon": "Saigon (Vietnam)",
+    "korintje": "Korintje (Indonesia)",
+    "madagascar": "Madagascar"
+  },
+
+  "recipes": {
+    "labels": {
+      "badge": "RECIPE",
+      "seeRecipe": "SEE RECIPE",
+      "prep": "Prep",
+      "cook": "Cook",
+      "servings": "Servings",
+      "ingredients": "Ingredients",
+      "steps": "Method",
+      "back": "Back"
+    },
+    "items": {
+      "rulouri-cu-scortisoara": {
+        "title": "Cinnamon Rolls",
+        "excerpt": "Fluffy dough, generous cinnamon filling, and silky frosting. Perfect for breakfast or dessert.",
+        "prep": "20 min",
+        "cook": "25–30 min",
+        "servings": "12 rolls",
+        "ingredients": [
+          "500 g all-purpose flour",
+          "7 g instant dry yeast",
+          "250 ml warm milk",
+          "60 g sugar",
+          "1 egg + 1 yolk",
+          "60 g soft butter + 40 g melted (for filling)",
+          "3–4 tbsp ground cinnamon",
+          "80–100 g brown sugar",
+          "Pinch of salt",
+          "Frosting: 120 g cream cheese, 40 g butter, 100 g powdered sugar, vanilla"
+        ],
+        "steps": [
+          "Mix milk, yeast and 1 tsp sugar; rest 5–10 min until foamy.",
+          "Knead flour with sugar, salt, egg, yeast mixture and 60 g soft butter. Proof 60–90 min.",
+          "Roll dough into a rectangle, brush with 40 g melted butter, sprinkle brown sugar + cinnamon.",
+          "Roll tightly, cut into 12 pieces, place in pan. Proof 30 min.",
+          "Bake at 180°C for 25–30 min. Make the frosting and spread over warm rolls."
+        ]
+      },
+      "granola-cu-scortisoara": {
+        "title": "Cinnamon & Nut Granola",
+        "excerpt": "Crispy oats, toasted nuts, honey and cinnamon. Perfect with yogurt or milk.",
+        "prep": "10 min",
+        "cook": "22–28 min",
+        "servings": "approx. 10 servings",
+        "ingredients": [
+          "300 g rolled oats",
+          "120 g nuts (almonds/walnuts/pecans), roughly chopped",
+          "60 g seeds (pumpkin/sunflower)",
+          "1–2 tbsp ground cinnamon",
+          "80 ml coconut or canola oil",
+          "120 ml honey or maple syrup",
+          "Pinch of salt",
+          "Optional: raisins/cranberries (stir in after baking)"
+        ],
+        "steps": [
+          "Combine oats, nuts, seeds, cinnamon and salt.",
+          "Mix oil with honey; pour over the dry mix and toss to coat.",
+          "Spread on a lined tray. Bake at 160–170°C for 22–28 min, stirring halfway.",
+          "Cool completely (it crisps up), then add dried fruit."
+        ]
+      },
+      "latte-cu-scortisoara": {
+        "title": "Cinnamon Latte",
+        "excerpt": "Velvety espresso, steamed milk and a dusting of cinnamon for warm, cozy vibes.",
+        "prep": "5 min",
+        "cook": "—",
+        "servings": "1 serving",
+        "ingredients": [
+          "1 shot espresso (30–40 ml)",
+          "200 ml milk (or plant-based alternative)",
+          "½ tsp ground cinnamon",
+          "1–2 tsp sugar or syrup (to taste)"
+        ],
+        "steps": [
+          "Sweeten the espresso to taste.",
+          "Heat and foam the milk.",
+          "Pour milk over espresso. Dust with cinnamon and serve immediately."
+        ]
+      },
+      "mere-coapte-cu-scortisoara": {
+        "title": "Baked Apples with Cinnamon & Honey",
+        "excerpt": "Slow-baked apples stuffed with nuts and honey, lifted by warm cinnamon. A simple, comforting dessert.",
+        "prep": "10 min",
+        "cook": "25–35 min",
+        "servings": "4 servings",
+        "ingredients": [
+          "4 firm apples (e.g., Jonatan/Braeburn)",
+          "40 g chopped nuts",
+          "2–3 tbsp honey",
+          "1 tsp ground cinnamon",
+          "Pinch of vanilla",
+          "10 g butter"
+        ],
+        "steps": [
+          "Core the apples without piercing through.",
+          "Fill with nuts + honey + cinnamon + vanilla.",
+          "Top each with a small knob of butter; bake at 180°C for 25–35 min until tender and glossy."
+        ]
+      },
+      "cookies-ciocolata-scortisoara": {
+        "title": "Chocolate Chip & Cinnamon Cookies",
+        "excerpt": "Soft cookies with chocolate chips and warm cinnamon notes. Quick to make, gone in a flash!",
+        "prep": "15 min",
+        "cook": "10–12 min",
+        "servings": "approx. 20 cookies",
+        "ingredients": [
+          "120 g soft butter",
+          "120 g sugar + 80 g brown sugar",
+          "1 large egg",
+          "220 g flour",
+          "1 tsp baking powder",
+          "1 tsp ground cinnamon",
+          "Pinch of salt",
+          "150 g chocolate chips"
+        ],
+        "steps": [
+          "Beat butter with both sugars until creamy; mix in the egg.",
+          "Add dry ingredients, then fold in chocolate chips.",
+          "Scoop into balls, place on tray, bake at 180°C for 10–12 min. Cool on a rack."
+        ]
+      },
+      "curry-dovleac-scortisoara": {
+        "title": "Pumpkin Curry with Cinnamon",
+        "excerpt": "Creamy pumpkin, coconut milk and a gentle spice blend where cinnamon shines quietly.",
+        "prep": "10 min",
+        "cook": "20 min",
+        "servings": "4 servings",
+        "ingredients": [
+          "600 g pumpkin, cubed",
+          "1 small onion, chopped",
+          "2 garlic cloves",
+          "1 tsp curry paste or powder",
+          "½ tsp ground cinnamon",
+          "250 ml coconut milk",
+          "250 ml vegetable stock",
+          "2 tbsp oil",
+          "Salt, pepper; fresh coriander to serve"
+        ],
+        "steps": [
+          "Sauté onion in oil for 2–3 min; add garlic, curry and cinnamon for 30 sec.",
+          "Add pumpkin, stock and coconut milk; simmer 15–20 min until tender.",
+          "Season to taste; serve with rice and coriander."
+        ]
+      }
+    }
+  },
+
+  "typesPage": {
+    "labels": {
+      "badge": "TYPE",
+      "details": "DETAILS & USES",
+      "back": "Back",
+      "sectionOrigin": "Origin & Sensory Profile",
+      "origin": "Origin",
+      "intensity": "Intensity",
+      "color": "Color",
+      "texture": "Texture",
+      "aromaNotes": "Aroma notes",
+      "bestUses": "Best uses",
+      "disclaimer": "Note: information is for culinary/educational purposes."
+    },
+    "items": {
+      "ceylon": {
+        "title": "Ceylon (“true cinnamon”)",
+        "excerpt": "Delicate, floral, citrusy. Thin quills with many layers. Favoured for refined desserts.",
+        "origin": "Sri Lanka",
+        "intensity": "delicate",
+        "color": "light brown, golden",
+        "texture": "thin, brittle sticks; fine powder",
+        "aromaNotes": ["floral", "honey", "light citrus", "warm, mildly sweet"],
+        "bestUses": [
+          "creams & frostings",
+          "baked fruit",
+          "smooth coffee/latte",
+          "light granola",
+          "apples, pears"
+        ]
+      },
+      "cassia-china": {
+        "title": "Cassia (China)",
+        "excerpt": "Bold, sweet-spicy aroma. Thick single-scroll sticks. Very popular in baking.",
+        "origin": "China",
+        "intensity": "strong",
+        "color": "reddish brown",
+        "texture": "thick, hard sticks; slightly coarse powder",
+        "aromaNotes": [
+          "sweet-spicy",
+          "woody",
+          "warm",
+          "slightly bitter finish"
+        ],
+        "bestUses": [
+          "cinnamon rolls",
+          "cookies & muffins",
+          "mulled wine spice",
+          "meat rubs"
+        ]
+      },
+      "saigon": {
+        "title": "Saigon (Vietnamese)",
+        "excerpt": "Highly fragrant with a spicy lift. Instantly boosts dessert flavor.",
+        "origin": "Vietnam",
+        "intensity": "strong",
+        "color": "dark brown",
+        "texture": "thick sticks; intensely aromatic powder",
+        "aromaNotes": ["spicy", "hint of camphor", "sweet-bitter", "woody"],
+        "bestUses": [
+          "brownies & chocolate",
+          "intense granola",
+          "winter spice blends",
+          "robust curries"
+        ]
+      },
+      "korintje": {
+        "title": "Korintje (Indonesian)",
+        "excerpt": "Balanced, consistent, widely used in commercial baking.",
+        "origin": "Indonesia",
+        "intensity": "medium",
+        "color": "medium brown",
+        "texture": "firm sticks; even powder",
+        "aromaNotes": ["warm sweet", "woody", "light peppery"],
+        "bestUses": [
+          "yeasted doughs",
+          "crumbles & pies",
+          "BBQ sauces",
+          "apple/pumpkin spice"
+        ]
+      },
+      "madagascar": {
+        "title": "Madagascar",
+        "excerpt": "Complex aromatic profile with vanilla notes — excellent in custards and crème brûlée.",
+        "origin": "Madagascar",
+        "intensity": "medium",
+        "color": "golden brown",
+        "texture": "thin-to-medium sticks; fine powder",
+        "aromaNotes": ["vanilla-like", "floral", "light honey", "warm"],
+        "bestUses": [
+          "custards & fine pastry",
+          "yogurts & parfaits",
+          "milk/tea infusions"
+        ]
+      }
+    }
+  },
+
+  "cv": {
+    "title": "Curriculum Vitae",
+    "header": {
+      "name": "Diana-Elena Durbacă",
+      "phone": "+40 748 636 599",
+      "emailText": "dianadurbaca2003&#64;gmail.com",
+      "emailHref": "mailto:dianadurbaca2003@gmail.com",
+      "linkedinText": "linkedin.com/durbacadiana",
+      "linkedinHref": "https://www.linkedin.com/in/diana-elena-durbac%C4%83-065473286",
+      "githubText": "github.com/durbacadiana",
+      "githubHref": "https://github.com/Durbace?tab=repositories"
+    },
+    "sections": {
+      "education": {
+        "title": "Education",
+        "items": [
+          {
+            "period": "Oct 2025 – Present",
+            "degree": "Master's in Internet Technologies (English-taught)",
+            "institution": "Transilvania University",
+            "location": "Brașov, Romania"
+          },
+          {
+            "period": "Oct 2022 – Jun 2025",
+            "degree": "Bachelor of Science in Computer Science",
+            "institution": "Transilvania University",
+            "location": "Brașov, Romania"
+          }
+        ],
+        "coursework": "Relevant coursework: Data Structures, Algorithms, Formal Languages and Compilers, Object-Oriented Programming (C++), Advanced Programming (Java), Artificial Intelligence (Python)."
+      },
+      "experience": {
+        "title": "Experience",
+        "items": [
+          {
+            "period": "Aug 2024 – Sep 2025",
+            "role": "Working Student (Frontend)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, Romania",
+            "bullets": [
+              "Built modular, reusable, reactive components in Angular.",
+              "Developed responsive and accessible UIs with Angular Material, PrimeNG, and CSS.",
+              "Integrated APIs with HttpClient and RxJS; handled async data and errors.",
+              "Applied best practices: lazy loading, feature modules, standalone components."
+            ]
+          },
+          {
+            "period": "Nov 2023 – Aug 2024",
+            "role": "Working Student (DevOps)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, Romania",
+            "bullets": [
+              "Containerized apps with Docker and orchestrated with Kubernetes.",
+              "Implemented CI/CD with GitHub Actions and ArgoCD.",
+              "Monitored apps with Grafana and optimized performance.",
+              "Worked with AWS, Azure, and VirtualBox environments."
+            ]
+          }
+        ]
+      },
+      "projects": {
+        "title": "Projects",
+        "items": [
+          {
+            "title": "Interactive 3D CV",
+            "link": "https://durbace.github.io/cv-spatial",
+            "stack": "Angular, Three.js, WebGL",
+            "desc": "Interactive online résumé as a 3D solar system with animations, hotspots, and a modern UI overlay."
+          },
+          {
+            "title": "Liceu-Bac Performance Analyzer",
+            "link": "https://github.com/Durbace/Liceu-Bac-PrimeNG_App",
+            "stack": "Angular, PrimeNG, Tailwind",
+            "desc": "Exam performance analytics, school recommendations, and admission trends."
+          },
+          {
+            "title": "Weather App",
+            "link": "https://github.com/Durbace/Weather-App",
+            "stack": "Angular, TypeScript",
+            "desc": "Open-Meteo integration, autocomplete search, and Firebase favorites."
+          },
+          {
+            "title": "Expense Tracker (Mobile)",
+            "link": "https://github.com/Durbace/Expense-Tracker-Mobile-App",
+            "stack": "Flutter, Dart, MongoDB",
+            "desc": "JWT auth, AI financial tips, receipt OCR, and PDF/Excel export."
+          },
+          {
+            "title": "Expense Tracker (Web)",
+            "link": "https://github.com/Durbace/Expense-Tracker",
+            "stack": "Angular, Node.js, MongoDB",
+            "desc": "Dashboards, categories, exports, and AI-assisted advice."
+          },
+          {
+            "title": "Python Echo Server & Client",
+            "link": "https://github.com/Durbace/PythonEchoNet",
+            "stack": "Python, asyncio, Docker",
+            "desc": "Asynchronous networking with CI/CD."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills & Interests",
+        "programming": "Programming: C, C++, C#, Java, Python, JavaScript, Dart, HTML/CSS",
+        "frameworks": "Frameworks & Tools: Angular, Node.js, Express, Flutter, Three.js, PrimeNG, Tailwind, Font Awesome",
+        "soft": "Soft skills: communication, teamwork, adaptability, attention to detail, logical thinking",
+        "languages": "Languages: Romanian (native), English",
+        "interests": "Interests: playing guitar, photography, gaming, cooking"
+      }
+    },
+    "actions": {
+      "downloadPdf": "Download PDF",
+      "close": "Close"
+    }
+  }
+}

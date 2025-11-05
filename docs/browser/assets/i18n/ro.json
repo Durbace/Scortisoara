@@ -1,0 +1,441 @@
+{
+  "nav": {
+    "home": "ACASĂ",
+    "recipes": "REȚETE",
+    "types": "ORIGINI",
+    "blog": "BLOG",
+    "contact": "CV",
+    "languages": "LIMBI"
+  },
+  "lang": { "ro": "ROMÂNĂ", "en": "ENGLEZĂ", "de": "GERMANĂ" },
+
+  "home": {
+    "hero": {
+      "aria": "Scorțișoară",
+      "line1": "Bun venit la",
+      "brand": "Universul Scorțișoarei",
+      "line3": "– gust, știință și rețete."
+    },
+    "quickGuide": {
+      "aria": "Ghid Rapid al Scorțișoarei",
+      "title": "Ghid Rapid al Scorțișoarei",
+      "line1": "<strong>Ceylon vs. Cassia:</strong> Ceylon = aromă fină, note florale; Cassia = intensă, dulce-picantă.",
+      "line2": "<strong>Dozaj recomandat:</strong> ½–1 linguriță/porție (în funcție de rețetă).",
+      "line3": "<strong>Pairing-uri excelente:</strong> mere, dovleac, cafea, iaurt, ovăz, ciocolată, miel.",
+      "line4": "<strong>Depozitare:</strong> borcan etanș, loc răcoros și întunecat; ideal sub 6–8 luni pentru vârf de aromă."
+    },
+    "sections": { "features": "Rețete & Tipuri" },
+    "cards": {
+      "recipes": {
+        "title": "REȚETE CU SCORȚIȘOARĂ",
+        "text": "De la rulouri și granola crocantă, până la curry-uri senzoriale și latte-uri aromate. Filtrează după tip și dificultate."
+      },
+      "types": {
+        "title": "TIPURI & ORIGINI",
+        "text": "Diferențe între Ceylon și Cassia: profiluri, intensitate, culoare și utilizări. Descoperă originea și cum alegi corect."
+      }
+    }
+  },
+
+  "badge": { "recipes": "REȚETE", "types": "TIPURI & ORIGINI" },
+  "imgAlt": {
+    "recipes": "Rețete cu scorțișoară",
+    "types": "Tipuri de scorțișoară și origini"
+  },
+  "cta": {
+    "seeRecipes": "VEZI REȚETELE",
+    "discoverTypes": "DESCOPERĂ TIPURILE"
+  },
+  "note": "Notă: informațiile au scop culinar-informativ.",
+
+  "guide": {
+    "title": "Ghid Practic al Scorțișoarei",
+    "cards": {
+      "storage": {
+        "title": "Depozitare corectă",
+        "text": "Borcan etanș, loc răcoros și întunecat. Pentru vârf de aromă: folosește în 6–8 luni."
+      },
+      "dosage": {
+        "title": "Dozaj & siguranță",
+        "text": "În rețete casnice: ½–1 linguriță/porție. Preferi aromă fină? Alege Ceylon."
+      },
+      "faq": {
+        "title": "Întrebări frecvente",
+        "q1": "Ceylon vs. Cassia – care pentru deserturi?",
+        "a1": "Ceylon dă note fine și florale; Cassia e mai intensă, dulce-picantă.",
+        "q2": "Bețe sau pudră?",
+        "a2": "Bețele pentru infuzii/lapte; pudra pentru aluaturi și mixuri rapide."
+      }
+    },
+    "note": "Notă: informațiile au scop culinar-informativ."
+  },
+
+  "types": {
+    "ceylon": "Ceylon (Sri Lanka)",
+    "cassiaChina": "Cassia (China)",
+    "saigon": "Saigon (Vietnam)",
+    "korintje": "Korintje (Indonezia)",
+    "madagascar": "Madagascar"
+  },
+
+  "recipes": {
+    "labels": {
+      "badge": "REȚETĂ",
+      "seeRecipe": "VEZI REȚETA",
+      "prep": "Pregătire",
+      "cook": "Gătire",
+      "servings": "Porții",
+      "ingredients": "Ingrediente",
+      "steps": "Mod de preparare",
+      "back": "Înapoi"
+    },
+    "items": {
+      "rulouri-cu-scortisoara": {
+        "title": "Rulouri cu scorțișoară (Cinnamon Rolls)",
+        "excerpt": "Aluat pufos, umplutură generoasă de scorțișoară și glazură fină. Ideal pentru mic-dejun sau desert.",
+        "prep": "20 min",
+        "cook": "25–30 min",
+        "servings": "12 rulouri",
+        "ingredients": [
+          "500 g făină albă",
+          "7 g drojdie uscată",
+          "250 ml lapte călduț",
+          "60 g zahăr",
+          "1 ou + 1 gălbenuș",
+          "60 g unt moale + 40 g topit (umplutură)",
+          "3–4 linguri scorțișoară pudră",
+          "80–100 g zahăr brun",
+          "1 praf de sare",
+          "Glazură: 120 g cremă de brânză, 40 g unt, 100 g zahăr pudră, vanilie"
+        ],
+        "steps": [
+          "Amestecă laptele, drojdia și 1 linguriță zahăr; lasă 5–10 min până face spumă.",
+          "Frământă făina cu zahăr, sare, oul, laptele cu drojdie și 60 g unt moale. Lasă la dospit 60–90 min.",
+          "Întinde aluatul în dreptunghi, unge cu 40 g unt topit, presară zahăr brun + scorțișoară.",
+          "Rulează strâns, taie 12 felii, pune în tavă. Dospire 30 min.",
+          "Coace la 180°C, 25–30 min. Mixează glazura și întinde pe rulouri calde."
+        ]
+      },
+      "granola-cu-scortisoara": {
+        "title": "Granola cu scorțișoară și nuci",
+        "excerpt": "Fulgi de ovăz crocanți, nuci prăjite, miere și scorțișoară. Perfectă cu iaurt sau lapte.",
+        "prep": "10 min",
+        "cook": "22–28 min",
+        "servings": "aprox. 10 porții",
+        "ingredients": [
+          "300 g fulgi de ovăz",
+          "120 g nuci (migdale/nuci/pecan), tocate mare",
+          "60 g semințe (dovleac / floarea-soarelui)",
+          "1–2 linguri scorțișoară pudră",
+          "80 ml ulei cocos sau rapiță",
+          "120 ml miere sau sirop arțar",
+          "1 praf de sare",
+          "Opțional: stafide/merișoare după coacere"
+        ],
+        "steps": [
+          "Amestecă ovăzul, nucile, semințele, scorțișoara și sarea.",
+          "Într-un bol, combină uleiul cu mierea; toarnă peste mix și amestecă.",
+          "Întinde uniform pe tavă cu hârtie de copt. Coace la 160–170°C 22–28 min, amestecând la jumătate.",
+          "Lasă să se răcească (se întărește), apoi adaugă fructele uscate."
+        ]
+      },
+      "latte-cu-scortisoara": {
+        "title": "Latte cu scorțișoară (Cinnamon Latte)",
+        "excerpt": "Espresso catifelat, lapte spumat și un praf de scorțișoară pentru un plus de aromă caldă.",
+        "prep": "5 min",
+        "cook": "—",
+        "servings": "1 porție",
+        "ingredients": [
+          "1 shot espresso (30–40 ml)",
+          "200 ml lapte (sau alternativă vegetală)",
+          "½ linguriță scorțișoară pudră",
+          "1–2 lingurițe zahăr sau sirop (după gust)"
+        ],
+        "steps": [
+          "Îndulcește espresso-ul după gust.",
+          "Încălzește laptele și spumează-l.",
+          "Toarnă laptele peste espresso. Presară scorțișoară deasupra. Servește imediat."
+        ]
+      },
+      "mere-coapte-cu-scortisoara": {
+        "title": "Mere coapte cu scorțișoară & miere",
+        "excerpt": "Mere coapte încet, umplute cu nuci și miere – ridicate de aroma caldă a scorțișoarei.",
+        "prep": "10 min",
+        "cook": "25–35 min",
+        "servings": "4 porții",
+        "ingredients": [
+          "4 mere tari (ex. Jonatan/Braeburn)",
+          "40 g nuci tocate",
+          "2–3 linguri miere",
+          "1 linguriță scorțișoară pudră",
+          "Un praf de vanilie",
+          "10 g unt"
+        ],
+        "steps": [
+          "Scobește merele fără să le străpungi până jos.",
+          "Umple cu nuci + miere + scorțișoară + vanilie.",
+          "Pune câte un cub mic de unt deasupra; coace la 180°C 25–35 min, până devin fragede și lucioase."
+        ]
+      },
+      "cookies-ciocolata-scortisoara": {
+        "title": "Cookies cu ciocolată & scorțișoară",
+        "excerpt": "Cookies moi cu fulgi de ciocolată și note calde de scorțișoară. Se fac repede, dispar și mai repede!",
+        "prep": "15 min",
+        "cook": "10–12 min",
+        "servings": "aprox. 20 bucăți",
+        "ingredients": [
+          "120 g unt moale",
+          "120 g zahăr + 80 g zahăr brun",
+          "1 ou mare",
+          "220 g făină",
+          "1 linguriță praf de copt",
+          "1 linguriță scorțișoară pudră",
+          "Un praf de sare",
+          "150 g fulgi/butoane de ciocolată"
+        ],
+        "steps": [
+          "Bate untul cu zahărul până cremos; încorporează oul.",
+          "Adaugă ingredientele uscate, apoi încorporează ciocolata.",
+          "Formează bile, așază pe tavă și coace la 180°C 10–12 min. Răcește pe grătar."
+        ]
+      },
+      "curry-dovleac-scortisoara": {
+        "title": "Curry de dovleac cu scorțișoară",
+        "excerpt": "Dovleac cremos, lapte de cocos și un mix delicat de condimente în care iese ușor în evidență scorțișoara.",
+        "prep": "10 min",
+        "cook": "20 min",
+        "servings": "4 porții",
+        "ingredients": [
+          "600 g dovleac, cuburi",
+          "1 ceapă mică, tocată",
+          "2 căței de usturoi",
+          "1 linguriță pastă/pudră de curry",
+          "½ linguriță scorțișoară pudră",
+          "250 ml lapte de cocos",
+          "250 ml supă de legume",
+          "2 linguri ulei",
+          "Sare, piper; coriandru proaspăt pentru servire"
+        ],
+        "steps": [
+          "Călește ceapa 2–3 min în ulei; adaugă usturoiul, curry-ul și scorțișoara 30 sec.",
+          "Pune dovleacul, supa și laptele de cocos; fierbe molcom 15–20 min până se înmoaie.",
+          "Potrivește de sare/piper; servește cu orez și coriandru."
+        ]
+      }
+    }
+  },
+
+  "typesPage": {
+    "labels": {
+      "badge": "TIP",
+      "details": "DETALII & UTILIZĂRI",
+      "back": "Înapoi",
+      "sectionOrigin": "Origine & Profil senzorial",
+      "origin": "Origine",
+      "intensity": "Intensitate",
+      "color": "Culoare",
+      "texture": "Textură",
+      "aromaNotes": "Note aromatice",
+      "bestUses": "Utilizări recomandate",
+      "disclaimer": "Notă: Informațiile sunt cu scop culinar-informativ."
+    },
+    "items": {
+      "ceylon": {
+        "title": "Ceylon („true cinnamon”)",
+        "excerpt": "Fină, florală, citrică. Bețe subțiri, multe straturi. Preferată pentru deserturi delicate.",
+        "origin": "Sri Lanka",
+        "intensity": "delicată",
+        "color": "maro deschis, auriu",
+        "texture": "bețe subțiri, friabile; pudră fină",
+        "aromaNotes": ["floral", "miere", "citric ușor", "cald, dulceag"],
+        "bestUses": [
+          "creme & glazuri",
+          "fructe coapte",
+          "cafea/latte fin",
+          "granola light",
+          "mere, pere"
+        ]
+      },
+      "cassia-china": {
+        "title": "Cassia (China)",
+        "excerpt": "Aromă intensă, dulce-picantă. Bețe groase, o singură spirală. Foarte populară în copt.",
+        "origin": "China",
+        "intensity": "puternică",
+        "color": "maro-roșiatic",
+        "texture": "bețe groase, dure; pudră ușor grunjoasă",
+        "aromaNotes": [
+          "dulce-picant",
+          "lemnos",
+          "cald",
+          "ușor amar spre final"
+        ],
+        "bestUses": [
+          "rulouri cu scorțișoară",
+          "cookies & brioșe",
+          "condimente pentru vin fiert",
+          "mixuri pentru carne"
+        ]
+      },
+      "saigon": {
+        "title": "Saigon (Vietnameză)",
+        "excerpt": "Foarte parfumată, accent picant. Îți ridică instant profilul de aromă în deserturi.",
+        "origin": "Vietnam",
+        "intensity": "puternică",
+        "color": "maro închis",
+        "texture": "bețe groase; pudră aromată intens",
+        "aromaNotes": ["picant", "camforic subtil", "dulce-amărui", "lemnos"],
+        "bestUses": [
+          "brownies & ciocolată",
+          "granola intensă",
+          "mixuri pentru iarnă",
+          "curry-uri robuste"
+        ]
+      },
+      "korintje": {
+        "title": "Korintje (Indoneziană)",
+        "excerpt": "Echilibrată, consistentă, foarte folosită în patiserie comercială.",
+        "origin": "Indonezia",
+        "intensity": "medie",
+        "color": "maro mediu",
+        "texture": "bețe ferme; pudră uniformă",
+        "aromaNotes": ["dulce cald", "lemnos", "ușor piperat"],
+        "bestUses": [
+          "aluaturi dospite",
+          "crumble & plăcinte",
+          "sosuri BBQ",
+          "condimente pentru mere/dovleac"
+        ]
+      },
+      "madagascar": {
+        "title": "Madagascar",
+        "excerpt": "Profil aromat complex, cu note vanilate – excelentă în creme și crème brûlée.",
+        "origin": "Madagascar",
+        "intensity": "medie",
+        "color": "maro-auriu",
+        "texture": "bețe subțiri-medii; pudră fină",
+        "aromaNotes": ["vanilat", "floral", "ușor miere", "cald"],
+        "bestUses": [
+          "creme & patiserie fină",
+          "iaurturi & parfait",
+          "infuzie în lapte, ceaiuri"
+        ]
+      }
+    }
+  },
+
+  "cv": {
+    "title": "Curriculum Vitae",
+    "header": {
+      "name": "Diana-Elena Durbacă",
+      "phone": "0748636599",
+      "emailText": "dianadurbaca2003&#64;gmail.com",
+      "emailHref": "mailto:dianadurbaca2003@gmail.com",
+      "linkedinText": "linkedin.com/durbacadiana",
+      "linkedinHref": "https://www.linkedin.com/in/diana-elena-durbac%C4%83-065473286",
+      "githubText": "github.com/durbacadiana",
+      "githubHref": "https://github.com/Durbace?tab=repositories"
+    },
+    "sections": {
+      "education": {
+        "title": "Educație",
+        "items": [
+          {
+            "period": "Oct 2025 – Prezent",
+            "degree": "Master Tehnologii Internet (program în limba engleză)",
+            "institution": "Universitatea Transilvania",
+            "location": "Brașov, România"
+          },
+          {
+            "period": "Oct 2022 – Iun 2025",
+            "degree": "Licență în Informatică",
+            "institution": "Universitatea Transilvania",
+            "location": "Brașov, România"
+          }
+        ],
+        "coursework": "Cursuri relevante: Structuri de Date, Algoritmi, Limbaje Formale și Compilatoare, Programare Orientată Obiect (C++), Programare Avansată (Java), Inteligență Artificială (Python)."
+      },
+      "experience": {
+        "title": "Experiență",
+        "items": [
+          {
+            "period": "Aug 2024 – Sep 2025",
+            "role": "Working Student (Frontend)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, România",
+            "bullets": [
+              "Am construit componente modulare, reutilizabile și reactive în Angular.",
+              "Interfețe responsive și accesibile cu Angular Material, PrimeNG și CSS.",
+              "Integrare API cu HttpClient și RxJS; gestionarea datelor asincrone și a erorilor.",
+              "Bune practici: lazy loading, feature modules, standalone components."
+            ]
+          },
+          {
+            "period": "Nov 2023 – Aug 2024",
+            "role": "Working Student (DevOps)",
+            "company": "TechTrek — NTT Data",
+            "location": "Brașov, România",
+            "bullets": [
+              "Containerizare cu Docker și orchestrare cu Kubernetes.",
+              "CI/CD cu GitHub Actions și ArgoCD.",
+              "Monitorizare cu Grafana și optimizări de performanță.",
+              "Lucru cu AWS, Azure și medii VirtualBox."
+            ]
+          }
+        ]
+      },
+      "projects": {
+        "title": "Proiecte",
+        "items": [
+          {
+            "title": "Interactive 3D CV",
+            "link": "https://durbace.github.io/cv-spatial",
+            "stack": "Angular, Three.js, WebGL",
+            "desc": "CV online interactiv ca sistem solar 3D, cu animații, hotspot-uri și UI modern."
+          },
+          {
+            "title": "Liceu-Bac Performance Analyzer",
+            "link": "https://github.com/Durbace/Liceu-Bac-PrimeNG_App",
+            "stack": "Angular, PrimeNG, Tailwind",
+            "desc": "Analytics pentru rezultate la examene, recomandări de licee și trenduri de admitere."
+          },
+          {
+            "title": "Weather App",
+            "link": "https://github.com/Durbace/Weather-App",
+            "stack": "Angular, TypeScript",
+            "desc": "Integrare Open-Meteo, căutare cu autocomplete, favorite în Firebase."
+          },
+          {
+            "title": "Expense Tracker (Mobile)",
+            "link": "https://github.com/Durbace/Expense-Tracker-Mobile-App",
+            "stack": "Flutter, Dart, MongoDB",
+            "desc": "Autentificare JWT, sfaturi financiare AI, OCR bonuri, export PDF/Excel."
+          },
+          {
+            "title": "Expense Tracker (Web)",
+            "link": "https://github.com/Durbace/Expense-Tracker",
+            "stack": "Angular, Node.js, MongoDB",
+            "desc": "Dashboard-uri, categorii, exporturi și recomandări asistate AI."
+          },
+          {
+            "title": "Python Echo Server & Client",
+            "link": "https://github.com/Durbace/PythonEchoNet",
+            "stack": "Python, asyncio, Docker",
+            "desc": "Rețelistică asincronă cu pipeline de CI/CD."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Competențe & Interese",
+        "programming": "Programare: C, C++, C#, Java, Python, JavaScript, Dart, HTML/CSS",
+        "frameworks": "Framework-uri & unelte: Angular, Node.js, Express, Flutter, Three.js, PrimeNG, Tailwind, Font Awesome",
+        "soft": "Soft skills: comunicare, lucru în echipă, adaptabilitate, atenție la detalii, gândire logică",
+        "languages": "Limbi: română (nativ), engleză",
+        "interests": "Interese: chitară, fotografie, gaming, gătit"
+      }
+    },
+    "actions": {
+      "downloadPdf": "Descarcă PDF",
+      "close": "Închide"
+    }
+  }
+}
